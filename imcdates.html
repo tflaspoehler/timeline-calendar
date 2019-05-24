@@ -1,0 +1,894 @@
+
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<head>
+
+	<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T9RV8T8');</script>
+<!-- End Google Tag Manager -->
+
+	<meta charset="UTF-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-title" content="International Market Centers - ">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="https://www.imcenters.com/xmlrpc.php">
+	<title>Markets &amp; Shows - International Market Centers</title>
+
+<!-- This site is optimized with the Yoast SEO Premium plugin v9.6.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<!-- Admin only notice: this page does not show a meta description because it does not have one, either write it for this page specifically or go into the [SEO - Search Appearance] menu and set up a template. -->
+<link rel="canonical" href="https://www.imcenters.com/markets-and-shows/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Markets &amp; Shows - International Market Centers" />
+<meta property="og:description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suspendisse potenti nullam ac tortor vitae purus. Morbi tincidunt ornare massa eget egestas purus viverra accumsan.Read More" />
+<meta property="og:url" content="https://www.imcenters.com/markets-and-shows/" />
+<meta property="og:site_name" content="International Market Centers" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suspendisse potenti nullam ac tortor vitae purus. Morbi tincidunt ornare massa eget egestas purus viverra accumsan.Read More" />
+<meta name="twitter:title" content="Markets &amp; Shows - International Market Centers" />
+<!-- / Yoast SEO Premium plugin. -->
+
+<link rel='dns-prefetch' href='//www.imcenters.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="International Market Centers &raquo; Feed" href="https://www.imcenters.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="International Market Centers &raquo; Comments Feed" href="https://www.imcenters.com/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.imcenters.com\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='dashicons-css'  href='https://www.imcenters.com/wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='admin-bar-css'  href='https://www.imcenters.com/wp-includes/css/admin-bar.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://www.imcenters.com/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='https://www.imcenters.com/wp-content/plugins/contact-form-7/includes/css/styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='lightbox-styles-css'  href='https://www.imcenters.com/wp-content/themes/imcenters/js/lightbox/ekko-lightbox.css' type='text/css' media='all' />
+<link rel='stylesheet' id='laos-styles-css'  href='https://www.imcenters.com/wp-content/themes/imcenters/css/aos.css' type='text/css' media='all' />
+<link rel='stylesheet' id='child-understrap-styles-css'  href='https://www.imcenters.com/wp-content/themes/imcenters/css/child-theme.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='yoast-seo-adminbar-css'  href='https://www.imcenters.com/wp-content/plugins/wordpress-seo-premium/css/dist/adminbar-961.min.css' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.imcenters.com/wp-includes/js/jquery/jquery.js'></script>
+<script type='text/javascript' src='https://www.imcenters.com/wp-includes/js/jquery/jquery-migrate.min.js'></script>
+<link rel='https://api.w.org/' href='https://www.imcenters.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.imcenters.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.imcenters.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='shortlink' href='https://www.imcenters.com/?p=129' />
+<link rel="alternate" type="application/json+oembed" href="https://www.imcenters.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.imcenters.com%2Fmarkets-and-shows%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.imcenters.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.imcenters.com%2Fmarkets-and-shows%2F&#038;format=xml" />
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="International Market Centers - ">
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<style type="text/css" media="print">#wpadminbar { display:none; }</style>
+	<style type="text/css" media="screen">
+	html { margin-top: 32px !important; }
+	* html body { margin-top: 32px !important; }
+	@media screen and ( max-width: 782px ) {
+		html { margin-top: 46px !important; }
+		* html body { margin-top: 46px !important; }
+	}
+</style>
+	<link rel="icon" href="https://www.imcenters.com/wp-content/uploads/2018/12/shortcut_wmc.png" sizes="32x32" />
+<link rel="icon" href="https://www.imcenters.com/wp-content/uploads/2018/12/shortcut_wmc.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://www.imcenters.com/wp-content/uploads/2018/12/shortcut_wmc.png" />
+<meta name="msapplication-TileImage" content="https://www.imcenters.com/wp-content/uploads/2018/12/shortcut_wmc.png" />
+
+	<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-30940982-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<!-- tpl part: header v1 -->
+<body class="page-template page-template-page-templates page-template-markets-and-shows-page page-template-page-templatesmarkets-and-shows-page-php page page-id-129 logged-in admin-bar no-customize-support wp-custom-logo group-blog">
+
+	<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9RV8T8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="site" id="page">
+
+		<!-- ******************* The Navbar Area ******************* -->
+		<div id="wrapper-navbar" itemscope itemtype="http://schema.org/WebSite">
+
+			<a class="skip-link sr-only sr-only-focusable" href="#content">Skip to content</a>
+
+			<nav class="navbar navbar-expand-xl navbar-dark bg-primary">
+
+										<!-- Your site title as branding in the menu -->
+						<a href="https://www.imcenters.com/" class="navbar-brand custom-logo-link" rel="home" itemprop="url"><img width="276" height="70" src="https://www.imcenters.com/wp-content/uploads/2018/12/IMC-Nav-Logo.png" class="img-fluid" alt="International Market Centers" itemprop="logo" /></a><!-- end custom logo -->
+
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+
+							<!-- <div class="toggler-box">
+							<div class="toggler-inner"></div>
+						</div> -->
+					</button>
+
+					<!-- The WordPress Menu goes here -->
+					<div id="navbarNavDropdown" class="collapse navbar-collapse"><ul id="main-menu" class="navbar-nav ml-auto"><li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-175" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-175 nav-item"><a title="Our Company" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link" id="menu-item-dropdown-175">Our Company</a>
+<ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-175" role="menu">
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-421" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-421 nav-item"><a title="Our Story" href="https://www.imcenters.com/our-story/" class="dropdown-item">Our Story</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-203" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-203 nav-item"><a title="Our Principles" href="https://www.imcenters.com/our-principles/" class="dropdown-item">Our Principles</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-149" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-149 nav-item"><a title="Our Leadership" href="https://www.imcenters.com/our-leadership/" class="dropdown-item">Our Leadership</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-184" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-184 nav-item"><a title="IMC Spotlight" href="https://www.imcenters.com/imc-spotlight/" class="dropdown-item">IMC Spotlight</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-193" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-193 nav-item"><a title="Careers at IMC" href="https://www.imcenters.com/careers-at-imc/" class="dropdown-item">Careers at IMC</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-196" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-196 nav-item"><a title="Venue Rentals" href="https://www.imcenters.com/venue-rental/" class="dropdown-item">Venue Rentals</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-201" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-201 nav-item"><a title="Contact Us" href="https://www.imcenters.com/contact-us/" class="dropdown-item">Contact Us</a></li>
+</ul>
+</li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-178 nav-item"><a title="Industries" href="https://www.imcenters.com/industries/" class="nav-link">Industries</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-150" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-129 current_page_item active menu-item-150 nav-item"><a title="Markets &#038; Shows" href="https://www.imcenters.com/markets-and-shows/" class="nav-link">Markets &#038; Shows</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-65" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-65 nav-item"><a title="Locations" href="https://www.imcenters.com/locations/" class="nav-link">Locations</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-181" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-181 nav-item"><a title="Corporate News" href="https://www.imcenters.com/news-and-media/" class="nav-link">Corporate News</a></li>
+</ul></div>					
+
+		</nav><!-- .site-navigation -->
+
+	</div><!-- #wrapper-navbar end -->
+<!-- tpl: markets and shows page -->
+<div class="wrapper market-wrapper" id="full-width-page-wrapper">
+
+	<div class="container-fluid" id="content">
+
+		<div class="row">
+
+			<div class="col-lg-12 content-area" id="primary">
+
+				<main class="site-main" id="main" role="main">
+
+					
+						<!-- lpt: content markets and shows -->
+<article class="post-129 page type-page status-publish hentry" id="post-129">
+
+	<header class="entry-header">
+		
+		<section class="hero-wrapper" data-responsive-background-image>
+			<img class="hero-img" src="https://www.imcenters.com/wp-content/uploads/2018/12/MarketsShows-Hero.png" srcset="https://www.imcenters.com/wp-content/uploads/2018/12/MarketsShows-Hero.png 1920w, https://www.imcenters.com/wp-content/uploads/2018/12/MarketsShows-Hero-300x168.png 300w, https://www.imcenters.com/wp-content/uploads/2018/12/MarketsShows-Hero-768x431.png 768w, https://www.imcenters.com/wp-content/uploads/2018/12/MarketsShows-Hero-1024x574.png 1024w" sizes="100vw"/>
+			<div class="hero-overlay"></div>
+
+			<div class="container-fluid market-wrap">
+				<div class="row">
+					<div class="col-lg-6 col-12">
+
+						<section class="inner-hero-section"   data-aos="fade-right" style="background-image: url();background-size:cover;">
+							<div class="inner-hero-content">
+
+								<h1 class="main-content-hero-light">Markets & Shows</h1><h2 class="main-content-secondary-light"></h2>								<div class="inner-hero-content">
+									<div class="content" style="border-top:1px solid white ;padding-top: 1rem;">
+										<h3 class="main-content-third-light" style="line-height: 1.4; padding-top: 20px;">A Variety of Cross-Industry Options Meeting the Diverse Needs of Buyers</h3>
+<p class="main-content-light-white-p">Markets play a vital role for both Buyers and Sellers.  Our bi-coastal platform offers unrivaled access for furniture, home décor, gift and apparel commerce.</p>
+									</div>
+
+									<div class="open-edit-secondary-content">
+										<a class="open-edit-hero-link link" data-target="#loc-atlanta" href="#loc-atlanta">Atlanta</a> <a class="open-edit-hero-link link" data-target="#loc-high_point" href="#loc-high_point">High Point</a> <a class="open-edit-hero-link link" data-target="#loc-las_vegas" href="#loc-las_vegas">Las Vegas</a>									</div>
+								</div>
+							</div>
+
+
+						</section>
+
+					</div>
+				</div>
+			</div>
+		</section>
+	</header><!-- .entry-header -->
+
+
+	<div class="entry-content">
+
+		
+    <!-- top level loc -->
+    <div class="container-fluid">
+      <div class="row container-row display-location-row" id="loc-atlanta"style="background-image: url(https://www.imcenters.com/wp-content/uploads/2018/11/AtlantaHero.jpg);background-repeat: no-repeat;align-items:center;background-size:cover;background-position: center;">
+        <div class="max-container">
+          <div class="col-lg-6 col-12">
+        <section class="individual-location-section">
+          <div class="individual-location-content">
+
+            <h3 class="main-header">Atlanta Market & Shows</h3>
+          </div>
+          <div class="individual-location-main-content">
+
+            <p><p>AmericasMart Atlanta is a leading wholesale marketplace housing the nation’s largest gift product mix complemented by a broad selection of home accents, décor, tabletop, gourmet, area rug and fashion apparel merchandise. Its 16 annual markets and shows serve specialty retailers, designers and major buying groups from every U.S. state and more than 70 countries.</p>
+</p>
+          </div>
+                    <div class="individual-location-secondary-content">
+
+            <!-- <a name="loc-atlanta" /> -->
+            <a class="link individual-link" href="https://www.americasmart.com/markets"  target="_blank" rel="noopener" data-tf="true" >AmericasMart Atlanta Markets</a><br />
+          </div>
+
+        </section>
+      </div>
+      </div>
+    </div>
+    </div>
+    <!-- end top level loc -->
+    <div class="tabbed-content-wrapper">
+    <article class="tabbed-content tabs-side">
+      <nav class="tabs">
+        <ul>
+
+                        <li class=" active">
+                <span class="fa-stack">
+    <!-- The icon that will wrap the number -->
+    <span class="fa fa-circle fa-stack-2x"></span>
+    <!-- a strong element with the custom content, in this case a number -->
+    <strong class="fa-stack-1x">
+        1    </strong></span>
+    <a href="#Atlanta-AmericasMart_Gift_Home" class="property-link  active">AmericasMart Gift & Home</a></li>
+                            <li class="">
+                <span class="fa-stack">
+    <!-- The icon that will wrap the number -->
+    <span class="fa fa-circle fa-stack-2x"></span>
+    <!-- a strong element with the custom content, in this case a number -->
+    <strong class="fa-stack-1x">
+        2    </strong></span>
+    <a href="#Atlanta-AmericasMart_Apparel" class="property-link ">AmericasMart Apparel</a></li>
+                            <li class="">
+                <span class="fa-stack">
+    <!-- The icon that will wrap the number -->
+    <span class="fa fa-circle fa-stack-2x"></span>
+    <!-- a strong element with the custom content, in this case a number -->
+    <strong class="fa-stack-1x">
+        3    </strong></span>
+    <a href="#Atlanta-AmericasMart_Year_Round" class="property-link ">AmericasMart Year-Round</a></li>
+                            <li class="">
+                <span class="fa-stack">
+    <!-- The icon that will wrap the number -->
+    <span class="fa fa-circle fa-stack-2x"></span>
+    <!-- a strong element with the custom content, in this case a number -->
+    <strong class="fa-stack-1x">
+        4    </strong></span>
+    <a href="#Atlanta-Atlanta_Decorative_Arts_Center" class="property-link ">Atlanta Decorative Arts Center</a></li>
+                      </ul>
+      </nav>
+
+
+      <div class="items-container">
+                <section id="Atlanta-AmericasMart_Gift_Home" class="item  active" data-title="AmericasMart Gift & Home">
+            <div class="floating-x"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.15 26.15"><defs><style>.cls-1{fill:#FFFFFF;}</style></defs><title>x-icon</title><rect class="cls-1" x="14.5" y="-0.99" width="3" height="33.99" transform="translate(13.08 -9.55) rotate(45)"/><rect class="cls-1" x="14.5" y="-0.99" width="3" height="33.99" transform="translate(-9.55 13.08) rotate(-45)"/></svg></div>
+            <div class="item-content flexible-content-market-show-wrapper">
+
+
+              <h2 class="flexible-content-market-show-title">AmericasMart Gift & Home</h2>
+              <div class="row">
+                  <div class="col-lg-12 marketshow-content">
+                    <p>Explore AmericasMart&#8217;s top annual gift &amp; home shows in Atlanta.</p>
+<p>&nbsp;</p>
+                  </div>
+              </div>
+              <div class="row">
+
+
+                <!-- flexible content -->
+                        <div class="col-lg-6 marketshow-content">
+
+                          <h4>Market Dates</h4>
+                <p></br></p>
+<h4 class="main-content-fourth-standard" style="color: #bad0f0; font-size: 1.2rem;">The Atlanta International Gift &amp; Home Furnishings Market</h4>
+<ul>
+<li><strong>2019 Summer Market • </strong>July 9 &#8211; 15</li>
+<li><strong>2020 Winter Market • </strong>January 14 –  21</li>
+<li><strong>2020 Summer Market • </strong>July 14 – July 20</li>
+<li><strong>2021 Winter Market • </strong>January 12 – 19</li>
+<li><strong>2021 Summer Market • </strong>July 13 – July 19</li>
+<li><strong>2022 Winter Market • </strong>January 11 – 18</li>
+<li><strong>2022 Summer Market • </strong>July 12 – 18</li>
+<li><strong>2023 Winter Market • </strong>January 10 – 17</li>
+<li><strong>2023 Summer Market • </strong>July 11 – 17</li>
+</ul>
+<p></br></p>
+<h4 class="main-content-fourth-standard" style="color: #bad0f0; font-size: 1.2rem;">The Atlanta International Area Rug Market featuring The National Oriental Rug Show</h4>
+<ul>
+<li>July 10 &#8211; 14, 2019</li>
+</ul>
+<p></br></p>
+<h4 class="main-content-fourth-standard" style="color: #bad0f0; font-size: 1.2rem;">Atlanta Spring Gift, Home Furnishings &amp; Holiday Market</h4>
+<p></br></p>
+<h4 class="main-content-fourth-standard" style="color: #bad0f0; font-size: 1.2rem;">Sample Sale + Cash &amp; Carry Event</h4>
+<ul>
+<li>May 7 &#8211; 9, 2019</li>
+<li>November 4 &#8211; 7, 2019</li>
+</ul>
+<p></br></p>
+<h4 class="main-content-fourth-standard" style="color: #bad0f0; font-size: 1.2rem;">Fall Design Week</h4>
+<ul>
+<li>September 23 &#8211; 27, 2019</li>
+</ul>
+<p>&nbsp;</p>
+<p><a href="https://www.americasmart.com/markets/gift-home-shows" target="_blank" rel="noopener">More Details on Gift &amp; Home Show Info</a></p>
+
+
+        </div>
+                <div class="col-lg-6 marketshow-content">
+
+          <!-- widget: property gallery --><div id="marketshow-gallery-carousel-31635" class="carousel slide" data-ride="carousel"><ol class="carousel-indicators"><li data-target="#marketshow-gallery-carousel-31635" data-slide-to="0" data-img="" class="active"></li><li data-target="#marketshow-gallery-carousel-31635" data-slide-to="1" data-img="" class=""></li><a class="ml-auto full-width-link" href="https://www.imcenters.com/wp-content/uploads/2019/01/AmericasMart-Busy-Lobby.jpg" data-toggle="lightbox"><i class="fa fa-arrows-alt"></i></a></ol><div class="carousel-inner"><div class="carousel-item active"><img width="640" height="427" src="https://www.imcenters.com/wp-content/uploads/2019/01/AmericasMart-Busy-Lobby.jpg" class="" alt="AmericasMart Busy Lobby" srcset="https://www.imcenters.com/wp-content/uploads/2019/01/AmericasMart-Busy-Lobby.jpg 1008w, https://www.imcenters.com/wp-content/uploads/2019/01/AmericasMart-Busy-Lobby-300x200.jpg 300w, https://www.imcenters.com/wp-content/uploads/2019/01/AmericasMart-Busy-Lobby-768x512.jpg 768w" sizes="(max-width: 640px) 100vw, 640px" /></div><div class="carousel-item "><img width="640" height="426" src="https://www.imcenters.com/wp-content/uploads/2018/12/AmericasMart-Gift-and-Home-1024x681.png" class="" alt="AmericasMart Apparel Show" srcset="https://www.imcenters.com/wp-content/uploads/2018/12/AmericasMart-Gift-and-Home-1024x681.png 1024w, https://www.imcenters.com/wp-content/uploads/2018/12/AmericasMart-Gift-and-Home-300x199.png 300w, https://www.imcenters.com/wp-content/uploads/2018/12/AmericasMart-Gift-and-Home-768x511.png 768w, https://www.imcenters.com/wp-content/uploads/2018/12/AmericasMart-Gift-and-Home.png 1047w" sizes="(max-width: 640px) 100vw, 640px" /></div></div>  <a class="carousel-control-prev" href="#marketshow-gallery-carousel-31635" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"><i class="fa fa-caret-left"></i></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#marketshow-gallery-carousel-31635" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"><i class="fa fa-caret-right"></i></span><span class="sr-only">Next</span></a></div>
+
+        </div>
+                        <!-- end flexible content -->
+
+
+
+              </div>
+            </div>
+          </section>
+
+                    <section id="Atlanta-AmericasMart_Apparel" class="item " data-title="AmericasMart Apparel">
+            <div class="floating-x"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.15 26.15"><defs><style>.cls-1{fill:#FFFFFF;}</style></defs><title>x-icon</title><rect class="cls-1" x="14.5" y="-0.99" width="3" height="33.99" transform="translate(13.08 -9.55) rotate(45)"/><rect class="cls-1" x="14.5" y="-0.99" width="3" height="33.99" transform="translate(-9.55 13.08) rotate(-45)"/></svg></div>
+            <div class="item-content flexible-content-market-show-wrapper">
+
+
+              <h2 class="flexible-content-market-show-title">Apparel Shows at AmericasMart</h2>
+              <div class="row">
+                  <div class="col-lg-12 marketshow-content">
+                    <p>From vibrant showrooms to trendsetting temporaries, shop Atlanta Apparel for access to top lines with collections designed to meet the needs of any retail buyer.</p>
+<p>&nbsp;</p>
+                  </div>
+              </div>
+              <div class="row">
+
+
+                <!-- flexible content -->
+                        <div class="col-lg-6 marketshow-content">
+
+                          <h4>Market Dates</h4>
+                <p>&nbsp;</p>
+<p><strong>Atlanta Apparel Show</strong></p>
+<ul>
+<li>February 5 &#8211; 9, 2019</li>
+<li>April 2 &#8211; 6, 2019</li>
+<li>June 12 &#8211; 15, 2019</li>
+<li>August 6 &#8211; 10, 2019</li>
+<li>October 15 &#8211; 19, 2019</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>VOW | New World of Bridal</strong></p>
+<ul>
+<li>April 2 &#8211; 4, 2019 &amp; September 24 &#8211; 26, 2019</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>World of Prom</strong></p>
+<ul>
+<li>August 5 &#8211; 9, 2019</li>
+</ul>
+<p>&nbsp;</p>
+<p><a href="https://www.americasmart.com/markets/apparel-shows">See all Apparel Show Details</a></p>
+<p>&nbsp;</p>
+
+
+        </div>
+                <div class="col-lg-6 marketshow-content">
+
+          <!-- widget: property gallery --><div id="marketshow-gallery-carousel-863660" class="carousel slide" data-ride="carousel"><ol class="carousel-indicators"><a class="ml-auto full-width-link" href="https://www.imcenters.com/wp-content/uploads/2018/12/AmericasMart-Apparel.jpg" data-toggle="lightbox"><i class="fa fa-arrows-alt"></i></a></ol><div class="carousel-inner"><div class="carousel-item active"><img width="640" height="427" src="https://www.imcenters.com/wp-content/uploads/2018/12/AmericasMart-Apparel-1024x683.jpg" class="" alt="AmericasMart Apparel Show" srcset="https://www.imcenters.com/wp-content/uploads/2018/12/AmericasMart-Apparel-1024x683.jpg 1024w, https://www.imcenters.com/wp-content/uploads/2018/12/AmericasMart-Apparel-300x200.jpg 300w, https://www.imcenters.com/wp-content/uploads/2018/12/AmericasMart-Apparel-768x512.jpg 768w, https://www.imcenters.com/wp-content/uploads/2018/12/AmericasMart-Apparel.jpg 1300w" sizes="(max-width: 640px) 100vw, 640px" /></div></div></div>
+
+        </div>
+                        <!-- end flexible content -->
+
+
+
+              </div>
+            </div>
+          </section>
+
+                    <section id="Atlanta-AmericasMart_Year_Round" class="item " data-title="AmericasMart Year-Round">
+            <div class="floating-x"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.15 26.15"><defs><style>.cls-1{fill:#FFFFFF;}</style></defs><title>x-icon</title><rect class="cls-1" x="14.5" y="-0.99" width="3" height="33.99" transform="translate(13.08 -9.55) rotate(45)"/><rect class="cls-1" x="14.5" y="-0.99" width="3" height="33.99" transform="translate(-9.55 13.08) rotate(-45)"/></svg></div>
+            <div class="item-content flexible-content-market-show-wrapper">
+
+
+              <h2 class="flexible-content-market-show-title">AmericasMart Year-Round </h2>
+              <div class="row">
+                  <div class="col-lg-12 marketshow-content">
+                    <p>Access Atlanta&#8217;s world-class gift, home decor, and apparel showrooms year-round.</p>
+<p>&nbsp;</p>
+                  </div>
+              </div>
+              <div class="row">
+
+
+                <!-- flexible content -->
+                        <div class="col-lg-6 marketshow-content">
+
+                          <h4>Year-Round Showroom Hours</h4>
+                <p>Open Monday &#8211; Friday from 10 a.m. to 4 p.m in Buildings 1, 2, and 3.</p>
+<p>&nbsp;</p>
+                <h4>Year-Round Shows & Events</h4>
+                <p><a href="https://www.americasmart.com/browse/#/events?market=14">See the complete list of year-rounds events.</a></p>
+
+
+        </div>
+                <div class="col-lg-6 marketshow-content">
+
+          <!-- widget: property gallery --><div id="marketshow-gallery-carousel-979436" class="carousel slide" data-ride="carousel"><ol class="carousel-indicators"><a class="ml-auto full-width-link" href="https://www.imcenters.com/wp-content/uploads/2019/01/AmericasMart-Busy-Lobby.jpg" data-toggle="lightbox"><i class="fa fa-arrows-alt"></i></a></ol><div class="carousel-inner"><div class="carousel-item active"><img width="640" height="427" src="https://www.imcenters.com/wp-content/uploads/2019/01/AmericasMart-Busy-Lobby.jpg" class="" alt="AmericasMart Busy Lobby" srcset="https://www.imcenters.com/wp-content/uploads/2019/01/AmericasMart-Busy-Lobby.jpg 1008w, https://www.imcenters.com/wp-content/uploads/2019/01/AmericasMart-Busy-Lobby-300x200.jpg 300w, https://www.imcenters.com/wp-content/uploads/2019/01/AmericasMart-Busy-Lobby-768x512.jpg 768w" sizes="(max-width: 640px) 100vw, 640px" /></div></div></div>
+
+        </div>
+                        <!-- end flexible content -->
+
+
+
+              </div>
+            </div>
+          </section>
+
+                    <section id="Atlanta-Atlanta_Decorative_Arts_Center" class="item " data-title="Atlanta Decorative Arts Center">
+            <div class="floating-x"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.15 26.15"><defs><style>.cls-1{fill:#FFFFFF;}</style></defs><title>x-icon</title><rect class="cls-1" x="14.5" y="-0.99" width="3" height="33.99" transform="translate(13.08 -9.55) rotate(45)"/><rect class="cls-1" x="14.5" y="-0.99" width="3" height="33.99" transform="translate(-9.55 13.08) rotate(-45)"/></svg></div>
+            <div class="item-content flexible-content-market-show-wrapper">
+
+
+              <h2 class="flexible-content-market-show-title">ADAC (Atlanta Decorative Arts Center)</h2>
+              <div class="row">
+                  <div class="col-lg-12 marketshow-content">
+                    <p>Open every Monday through Friday, ADAC invites you to shop more than 50 stunning showrooms, visit design studios, explore the campus for inspiration, attend signature events and dine in one of its two restaurants.</p>
+<p>&nbsp;</p>
+                  </div>
+              </div>
+              <div class="row">
+
+
+                <!-- flexible content -->
+                        <div class="col-lg-6 marketshow-content">
+
+                          <h4>Shows and Events</h4>
+                <p>&nbsp;</p>
+<p><a href="https://adacatlanta.com/events/">See complete list of shows and events</a></p>
+
+
+        </div>
+                <div class="col-lg-6 marketshow-content">
+
+          <!-- widget: property gallery --><div id="marketshow-gallery-carousel-510742" class="carousel slide" data-ride="carousel"><ol class="carousel-indicators"><a class="ml-auto full-width-link" href="https://www.imcenters.com/wp-content/uploads/2019/01/adac.jpg" data-toggle="lightbox"><i class="fa fa-arrows-alt"></i></a></ol><div class="carousel-inner"><div class="carousel-item active"><img width="640" height="488" src="https://www.imcenters.com/wp-content/uploads/2019/01/adac-1024x781.jpg" class="" alt="ADAC Interior" srcset="https://www.imcenters.com/wp-content/uploads/2019/01/adac-1024x781.jpg 1024w, https://www.imcenters.com/wp-content/uploads/2019/01/adac-300x229.jpg 300w, https://www.imcenters.com/wp-content/uploads/2019/01/adac-768x586.jpg 768w, https://www.imcenters.com/wp-content/uploads/2019/01/adac.jpg 1600w" sizes="(max-width: 640px) 100vw, 640px" /></div></div></div>
+
+        </div>
+                        <!-- end flexible content -->
+
+
+
+              </div>
+            </div>
+          </section>
+
+              </div>
+    </article>
+  </div>
+
+    
+    <!-- top level loc -->
+    <div class="container-fluid">
+      <div class="row container-row display-location-row" id="loc-high_point"style="background-image: url(https://www.imcenters.com/wp-content/uploads/2018/11/HighPointHero.jpg);background-repeat: no-repeat;align-items:center;background-size:cover;background-position: center;">
+        <div class="max-container">
+          <div class="col-lg-6 col-12">
+        <section class="individual-location-section">
+          <div class="individual-location-content">
+
+            <h3 class="main-header">High Point Markets & Shows</h3>
+          </div>
+          <div class="individual-location-main-content">
+
+            <p><p>High Point Market<span style="font-weight: 400;"> is the largest furnishings industry trade show in the world, with more than 2,000 manufacturers in 11.5 million square feet of showroom and exhibit space in multiple buildings in downtown High Point, North Carolina.  Each Market attracts tens of thousands of retail home furnishings buyers, interior designers, architects, and others in the home furnishings industry. International Market Centers owns the vast majority of the prime High Point Market showroom and exhibit real estate, which contain seventy percent of the exhibitors, including the majority of the top 500 manufacturers.</span></p>
+<p>&nbsp;</p>
+</p>
+          </div>
+                    <div class="individual-location-secondary-content">
+
+            <!-- <a name="loc-high_point" /> -->
+            
+          </div>
+
+        </section>
+      </div>
+      </div>
+    </div>
+    </div>
+    <!-- end top level loc -->
+    <div class="tabbed-content-wrapper">
+    <article class="tabbed-content tabs-side">
+      <nav class="tabs">
+        <ul>
+
+                        <li class=" active">
+                <span class="fa-stack">
+    <!-- The icon that will wrap the number -->
+    <span class="fa fa-circle fa-stack-2x"></span>
+    <!-- a strong element with the custom content, in this case a number -->
+    <strong class="fa-stack-1x">
+        1    </strong></span>
+    <a href="#High_Point-High_Point_Furniture_Market" class="property-link  active">High Point Furniture Market</a></li>
+                            <li class="">
+                <span class="fa-stack">
+    <!-- The icon that will wrap the number -->
+    <span class="fa fa-circle fa-stack-2x"></span>
+    <!-- a strong element with the custom content, in this case a number -->
+    <strong class="fa-stack-1x">
+        2    </strong></span>
+    <a href="#High_Point-Showtime" class="property-link ">Showtime</a></li>
+                      </ul>
+      </nav>
+
+
+      <div class="items-container">
+                <section id="High_Point-High_Point_Furniture_Market" class="item  active" data-title="High Point Furniture Market">
+            <div class="floating-x"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.15 26.15"><defs><style>.cls-1{fill:#FFFFFF;}</style></defs><title>x-icon</title><rect class="cls-1" x="14.5" y="-0.99" width="3" height="33.99" transform="translate(13.08 -9.55) rotate(45)"/><rect class="cls-1" x="14.5" y="-0.99" width="3" height="33.99" transform="translate(-9.55 13.08) rotate(-45)"/></svg></div>
+            <div class="item-content flexible-content-market-show-wrapper">
+
+
+              <h2 class="flexible-content-market-show-title">High Point Furniture Market</h2>
+              <div class="row">
+                  <div class="col-lg-12 marketshow-content">
+                    <p>International Market Centers owns and operates all the key showroom buildings at the High Point Market, including the majority of the top 500 manufacturers.</p>
+<p>Twice a year buyers from around the world visit the High Point Market to see fabulously designed showrooms and exhibits overflowing with beautiful new products. Buyers descend on High Point knowing they will see the most innovative new products, discover unique merchandising concepts, see the trends as they happen, and experience the vision and excitement of this incredible industry.</p>
+<p>&nbsp;</p>
+                  </div>
+              </div>
+              <div class="row">
+
+
+                <!-- flexible content -->
+                        <div class="col-lg-6 marketshow-content">
+
+                          <h4>Market Dates</h4>
+                <p>&nbsp;</p>
+<ul>
+<li><strong>Spring &#8217;19:</strong> April 6-10, 2019</li>
+<li><strong>Fall &#8217;19:</strong> October 19-23 2019</li>
+<li><strong>Spring &#8217;20:</strong> April 25-29, 2020</li>
+<li><strong>Fall &#8217;20:</strong> October 17-21, 2020</li>
+<li><strong>Spring &#8217;21:</strong> April 17-21, 2021</li>
+<li><strong>Fall &#8217;21:</strong> October 16-20, 2021</li>
+</ul>
+<p><a href="http://www.imchighpointmarket.com/market-overview">Learn More</a></p>
+
+
+        </div>
+                <div class="col-lg-6 marketshow-content">
+
+          <!-- widget: property gallery --><div id="marketshow-gallery-carousel-866552" class="carousel slide" data-ride="carousel"><ol class="carousel-indicators"><a class="ml-auto full-width-link" href="https://www.imcenters.com/wp-content/uploads/2018/12/Showplace-Front-Day-Shot-300dpi.jpg" data-toggle="lightbox"><i class="fa fa-arrows-alt"></i></a></ol><div class="carousel-inner"><div class="carousel-item active"><img width="630" height="487" src="https://www.imcenters.com/wp-content/uploads/2018/12/Showplace-Front-Day-Shot-300dpi.jpg" class="" alt="" srcset="https://www.imcenters.com/wp-content/uploads/2018/12/Showplace-Front-Day-Shot-300dpi.jpg 630w, https://www.imcenters.com/wp-content/uploads/2018/12/Showplace-Front-Day-Shot-300dpi-300x232.jpg 300w" sizes="(max-width: 630px) 100vw, 630px" /></div></div></div>
+
+        </div>
+                        <!-- end flexible content -->
+
+
+
+              </div>
+            </div>
+          </section>
+
+                    <section id="High_Point-Showtime" class="item " data-title="Showtime">
+            <div class="floating-x"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.15 26.15"><defs><style>.cls-1{fill:#FFFFFF;}</style></defs><title>x-icon</title><rect class="cls-1" x="14.5" y="-0.99" width="3" height="33.99" transform="translate(13.08 -9.55) rotate(45)"/><rect class="cls-1" x="14.5" y="-0.99" width="3" height="33.99" transform="translate(-9.55 13.08) rotate(-45)"/></svg></div>
+            <div class="item-content flexible-content-market-show-wrapper">
+
+
+              <h2 class="flexible-content-market-show-title">Showtime</h2>
+              <div class="row">
+                  <div class="col-lg-12 marketshow-content">
+                    <p>Showtime is the pre-eminent upholstery and decorative coverings market in the Western Hemisphere offering the largest selection of textiles, leather and trimmings and is hosted semi-annually by the Market Square Complex. Showtime™, High Point’s Semi-Annual Fabric Market, is produced by and for the members of the ITA (International Textile Alliance).</p>
+<p>&nbsp;</p>
+                  </div>
+              </div>
+              <div class="row">
+
+
+                <!-- flexible content -->
+                        <div class="col-lg-6 marketshow-content">
+
+                          <h4>Market Dates</h4>
+                <div>
+<p>&nbsp;</p>
+<ul>
+<li>June 2-5, 2019</li>
+<li>December 8-11, 2019</li>
+<li>June 7-10, 2020</li>
+<li>December 6-9, 2020</li>
+</ul>
+</div>
+<div><a href="http://internationaltextilealliance.org/showtime/">Visit ITA for More Information</a></div>
+
+
+        </div>
+                <div class="col-lg-6 marketshow-content">
+
+          <!-- widget: property gallery --><div id="marketshow-gallery-carousel-504297" class="carousel slide" data-ride="carousel"><ol class="carousel-indicators"><a class="ml-auto full-width-link" href="https://www.imcenters.com/wp-content/uploads/2018/12/ITA-SHowtime-logo.jpg" data-toggle="lightbox"><i class="fa fa-arrows-alt"></i></a></ol><div class="carousel-inner"><div class="carousel-item active"><img width="495" height="275" src="https://www.imcenters.com/wp-content/uploads/2018/12/ITA-SHowtime-logo.jpg" class="" alt="ITA Showtime Logo" srcset="https://www.imcenters.com/wp-content/uploads/2018/12/ITA-SHowtime-logo.jpg 495w, https://www.imcenters.com/wp-content/uploads/2018/12/ITA-SHowtime-logo-300x167.jpg 300w" sizes="(max-width: 495px) 100vw, 495px" /></div></div></div>
+
+        </div>
+                        <!-- end flexible content -->
+
+
+
+              </div>
+            </div>
+          </section>
+
+              </div>
+    </article>
+  </div>
+
+    
+    <!-- top level loc -->
+    <div class="container-fluid">
+      <div class="row container-row display-location-row" id="loc-las_vegas"style="background-image: url(https://www.imcenters.com/wp-content/uploads/2018/11/VegasHero.jpg);background-repeat: no-repeat;align-items:center;background-size:cover;background-position: center;">
+        <div class="max-container">
+          <div class="col-lg-6 col-12">
+        <section class="individual-location-section">
+          <div class="individual-location-content">
+
+            <h3 class="main-header">Las Vegas Markets & Shows</h3>
+          </div>
+          <div class="individual-location-main-content">
+
+            <p><p>Las Vegas Market<span style="font-weight: 400;"> is the leading home furnishings and gift market in the western U.S., presenting 4,000+ gift, home décor and furniture resources in an unrivaled market destination. Las Vegas Market features thousands of gift, furniture and home décor lines, allowing for cross-category commerce among these industries. </span></p>
+</p>
+          </div>
+                    <div class="individual-location-secondary-content">
+
+            <!-- <a name="loc-las_vegas" /> -->
+            <a class="link individual-link" href="https://www.lasvegasmarket.com/"  target="_blank" rel="noopener" data-tf="true" >Las Vegas Market</a><br />
+          </div>
+
+        </section>
+      </div>
+      </div>
+    </div>
+    </div>
+    <!-- end top level loc -->
+    <div class="tabbed-content-wrapper">
+    <article class="tabbed-content tabs-side">
+      <nav class="tabs">
+        <ul>
+
+                        <li class=" active">
+                <span class="fa-stack">
+    <!-- The icon that will wrap the number -->
+    <span class="fa fa-circle fa-stack-2x"></span>
+    <!-- a strong element with the custom content, in this case a number -->
+    <strong class="fa-stack-1x">
+        1    </strong></span>
+    <a href="#Las_Vegas-Las_Vegas_Market" class="property-link  active">Las Vegas Market</a></li>
+                            <li class="">
+                <span class="fa-stack">
+    <!-- The icon that will wrap the number -->
+    <span class="fa fa-circle fa-stack-2x"></span>
+    <!-- a strong element with the custom content, in this case a number -->
+    <strong class="fa-stack-1x">
+        2    </strong></span>
+    <a href="#Las_Vegas-Las_Vegas_Design_Center" class="property-link ">Las Vegas Design Center</a></li>
+                      </ul>
+      </nav>
+
+
+      <div class="items-container">
+                <section id="Las_Vegas-Las_Vegas_Market" class="item  active" data-title="Las Vegas Market">
+            <div class="floating-x"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.15 26.15"><defs><style>.cls-1{fill:#FFFFFF;}</style></defs><title>x-icon</title><rect class="cls-1" x="14.5" y="-0.99" width="3" height="33.99" transform="translate(13.08 -9.55) rotate(45)"/><rect class="cls-1" x="14.5" y="-0.99" width="3" height="33.99" transform="translate(-9.55 13.08) rotate(-45)"/></svg></div>
+            <div class="item-content flexible-content-market-show-wrapper">
+
+
+              <h2 class="flexible-content-market-show-title">Las Vegas Market</h2>
+              <div class="row">
+                  <div class="col-lg-12 marketshow-content">
+                    <p>A world-class experience that’s simple, efficient, and exciting for exhibitors, designers and buyers. All in a cross-category shopping environmet for gift, home décor and furniture. Located on a state-of-the-art campus amid an accessible city, quality accommodations and dining, as well as a strong focus on hospitality and amiability from our service team.</p>
+<p>&nbsp;</p>
+                  </div>
+              </div>
+              <div class="row">
+
+
+                <!-- flexible content -->
+                        <div class="col-lg-6 marketshow-content">
+
+                          <h4>Market Dates</h4>
+                <p>&nbsp;</p>
+<ul>
+<li><strong>2019 Summer Market • </strong>July 28 &#8211; August 1</li>
+<li><strong>2020 Winter Market • </strong>January 26 &#8211; 30</li>
+<li><strong>2020 Summer Market • </strong>July 26 &#8211; 30</li>
+<li><strong>2021 Winter Market • </strong>January 24 – 28</li>
+<li><strong>2021 Summer Market • </strong>July 25 – 29</li>
+<li><strong>2022 Winter Market • </strong>January 23 – 27</li>
+<li><strong>2022 Summer Market • </strong>July 24 – 28</li>
+<li><strong>2023 Winter Market • </strong>January 29 – February 2</li>
+<li><strong>2023 Summer Market • </strong>July 30 – August 3</li>
+</ul>
+<p>&nbsp;</p>
+<p><a href="https://www.lasvegasmarket.com/" target="_blank" rel="noopener">Visit Las Vegas Market for More Info</a></p>
+
+
+        </div>
+                <div class="col-lg-6 marketshow-content">
+
+          <!-- widget: property gallery --><div id="marketshow-gallery-carousel-924085" class="carousel slide" data-ride="carousel"><ol class="carousel-indicators"><li data-target="#marketshow-gallery-carousel-924085" data-slide-to="0" data-img="" class="active"></li><li data-target="#marketshow-gallery-carousel-924085" data-slide-to="1" data-img="" class=""></li><li data-target="#marketshow-gallery-carousel-924085" data-slide-to="2" data-img="" class=""></li><li data-target="#marketshow-gallery-carousel-924085" data-slide-to="3" data-img="" class=""></li><li data-target="#marketshow-gallery-carousel-924085" data-slide-to="4" data-img="" class=""></li><li data-target="#marketshow-gallery-carousel-924085" data-slide-to="5" data-img="" class=""></li><a class="ml-auto full-width-link" href="https://www.imcenters.com/wp-content/uploads/2018/12/B2B_B2B-073018-jkd-61.jpg" data-toggle="lightbox"><i class="fa fa-arrows-alt"></i></a></ol><div class="carousel-inner"><div class="carousel-item active"><img width="640" height="427" src="https://www.imcenters.com/wp-content/uploads/2018/12/B2B_B2B-073018-jkd-61.jpg" class="" alt="" srcset="https://www.imcenters.com/wp-content/uploads/2018/12/B2B_B2B-073018-jkd-61.jpg 1000w, https://www.imcenters.com/wp-content/uploads/2018/12/B2B_B2B-073018-jkd-61-300x200.jpg 300w, https://www.imcenters.com/wp-content/uploads/2018/12/B2B_B2B-073018-jkd-61-768x512.jpg 768w" sizes="(max-width: 640px) 100vw, 640px" /></div><div class="carousel-item "><img width="640" height="427" src="https://www.imcenters.com/wp-content/uploads/2018/12/B2B_B2B-073018-jkd-92.jpg" class="" alt="" srcset="https://www.imcenters.com/wp-content/uploads/2018/12/B2B_B2B-073018-jkd-92.jpg 1000w, https://www.imcenters.com/wp-content/uploads/2018/12/B2B_B2B-073018-jkd-92-300x200.jpg 300w, https://www.imcenters.com/wp-content/uploads/2018/12/B2B_B2B-073018-jkd-92-768x512.jpg 768w" sizes="(max-width: 640px) 100vw, 640px" /></div><div class="carousel-item "><img width="640" height="427" src="https://www.imcenters.com/wp-content/uploads/2018/12/013018_SJS_0031__B16_DesignIcon_FrankGehry-copy.jpg" class="" alt="" srcset="https://www.imcenters.com/wp-content/uploads/2018/12/013018_SJS_0031__B16_DesignIcon_FrankGehry-copy.jpg 1000w, https://www.imcenters.com/wp-content/uploads/2018/12/013018_SJS_0031__B16_DesignIcon_FrankGehry-copy-300x200.jpg 300w, https://www.imcenters.com/wp-content/uploads/2018/12/013018_SJS_0031__B16_DesignIcon_FrankGehry-copy-768x512.jpg 768w" sizes="(max-width: 640px) 100vw, 640px" /></div><div class="carousel-item "><img width="640" height="427" src="https://www.imcenters.com/wp-content/uploads/2018/12/012818_SJS_1130__C147_elizabethWSanFrancisco-copy.jpg" class="" alt="" srcset="https://www.imcenters.com/wp-content/uploads/2018/12/012818_SJS_1130__C147_elizabethWSanFrancisco-copy.jpg 1000w, https://www.imcenters.com/wp-content/uploads/2018/12/012818_SJS_1130__C147_elizabethWSanFrancisco-copy-300x200.jpg 300w, https://www.imcenters.com/wp-content/uploads/2018/12/012818_SJS_1130__C147_elizabethWSanFrancisco-copy-768x512.jpg 768w" sizes="(max-width: 640px) 100vw, 640px" /></div><div class="carousel-item "><img width="640" height="359" src="https://www.imcenters.com/wp-content/uploads/2018/12/MarketsShows-Hero-1024x574.png" class="" alt="" srcset="https://www.imcenters.com/wp-content/uploads/2018/12/MarketsShows-Hero-1024x574.png 1024w, https://www.imcenters.com/wp-content/uploads/2018/12/MarketsShows-Hero-300x168.png 300w, https://www.imcenters.com/wp-content/uploads/2018/12/MarketsShows-Hero-768x431.png 768w" sizes="(max-width: 640px) 100vw, 640px" /></div><div class="carousel-item "><img width="640" height="427" src="https://www.imcenters.com/wp-content/uploads/2018/12/012918_SJS_3647__A130_Vanguard-copy.jpg" class="" alt="" srcset="https://www.imcenters.com/wp-content/uploads/2018/12/012918_SJS_3647__A130_Vanguard-copy.jpg 1000w, https://www.imcenters.com/wp-content/uploads/2018/12/012918_SJS_3647__A130_Vanguard-copy-300x200.jpg 300w, https://www.imcenters.com/wp-content/uploads/2018/12/012918_SJS_3647__A130_Vanguard-copy-768x512.jpg 768w" sizes="(max-width: 640px) 100vw, 640px" /></div></div>  <a class="carousel-control-prev" href="#marketshow-gallery-carousel-924085" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"><i class="fa fa-caret-left"></i></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#marketshow-gallery-carousel-924085" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"><i class="fa fa-caret-right"></i></span><span class="sr-only">Next</span></a></div>
+
+        </div>
+                        <!-- end flexible content -->
+
+
+
+              </div>
+            </div>
+          </section>
+
+                    <section id="Las_Vegas-Las_Vegas_Design_Center" class="item " data-title="Las Vegas Design Center">
+            <div class="floating-x"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.15 26.15"><defs><style>.cls-1{fill:#FFFFFF;}</style></defs><title>x-icon</title><rect class="cls-1" x="14.5" y="-0.99" width="3" height="33.99" transform="translate(13.08 -9.55) rotate(45)"/><rect class="cls-1" x="14.5" y="-0.99" width="3" height="33.99" transform="translate(-9.55 13.08) rotate(-45)"/></svg></div>
+            <div class="item-content flexible-content-market-show-wrapper">
+
+
+              <h2 class="flexible-content-market-show-title">LVDC (Las Vegas Design Center)</h2>
+              <div class="row">
+                  <div class="col-lg-12 marketshow-content">
+                    <p>Located on the World Market Center Las Vegas campus just minutes from the Las Vegas Strip, LVDC is home to 30+ designer showrooms presenting more than 120 product lines. LVDC offers year-round access to a global selection of the industry&#8217;s finest furniture, fabrics, lighting, floor coverings, wall décor, decorative accessories, and kitchen &amp; bath products.</p>
+<p>&nbsp;</p>
+                  </div>
+              </div>
+              <div class="row">
+
+
+                <!-- flexible content -->
+                        <div class="col-lg-6 marketshow-content">
+
+                          <h4>Design Center Dates</h4>
+                <p>LVDC is open year-round, but is closed to consumers during Las Vegas Market and market preparation.</p>
+<p>&nbsp;</p>
+                <h4>Showroom Hours</h4>
+                <p>LVDC showrooms are open Monday-Friday from 10:00am to 5:00pm</p>
+<p>&nbsp;</p>
+<p><a href="https://www.lasvegasmarket.com/year-round/lvdc" target="_blank" rel="noopener">Visit LVDC for More Information</a></p>
+
+
+        </div>
+                <div class="col-lg-6 marketshow-content">
+
+          <!-- widget: property gallery --><div id="marketshow-gallery-carousel-38723" class="carousel slide" data-ride="carousel"><ol class="carousel-indicators"><li data-target="#marketshow-gallery-carousel-38723" data-slide-to="0" data-img="" class="active"></li><li data-target="#marketshow-gallery-carousel-38723" data-slide-to="1" data-img="" class=""></li><li data-target="#marketshow-gallery-carousel-38723" data-slide-to="2" data-img="" class=""></li><li data-target="#marketshow-gallery-carousel-38723" data-slide-to="3" data-img="" class=""></li><a class="ml-auto full-width-link" href="https://www.imcenters.com/wp-content/uploads/2018/12/LVDC-logo.png" data-toggle="lightbox"><i class="fa fa-arrows-alt"></i></a></ol><div class="carousel-inner"><div class="carousel-item active"><img width="640" height="427" src="https://www.imcenters.com/wp-content/uploads/2018/12/LVDC-logo.png" class="" alt="" srcset="https://www.imcenters.com/wp-content/uploads/2018/12/LVDC-logo.png 750w, https://www.imcenters.com/wp-content/uploads/2018/12/LVDC-logo-300x200.png 300w" sizes="(max-width: 640px) 100vw, 640px" /></div><div class="carousel-item "><img width="640" height="427" src="https://www.imcenters.com/wp-content/uploads/2018/12/LVDC_A110_072918_S75_3544_CaryVogel-copy.jpg" class="" alt="" srcset="https://www.imcenters.com/wp-content/uploads/2018/12/LVDC_A110_072918_S75_3544_CaryVogel-copy.jpg 1000w, https://www.imcenters.com/wp-content/uploads/2018/12/LVDC_A110_072918_S75_3544_CaryVogel-copy-300x200.jpg 300w, https://www.imcenters.com/wp-content/uploads/2018/12/LVDC_A110_072918_S75_3544_CaryVogel-copy-768x512.jpg 768w" sizes="(max-width: 640px) 100vw, 640px" /></div><div class="carousel-item "><img width="640" height="427" src="https://www.imcenters.com/wp-content/uploads/2018/12/LVDC_A110-DesignCenter-073018-jkd-12.jpg" class="" alt="" srcset="https://www.imcenters.com/wp-content/uploads/2018/12/LVDC_A110-DesignCenter-073018-jkd-12.jpg 1000w, https://www.imcenters.com/wp-content/uploads/2018/12/LVDC_A110-DesignCenter-073018-jkd-12-300x200.jpg 300w, https://www.imcenters.com/wp-content/uploads/2018/12/LVDC_A110-DesignCenter-073018-jkd-12-768x512.jpg 768w" sizes="(max-width: 640px) 100vw, 640px" /></div><div class="carousel-item "><img width="640" height="854" src="https://www.imcenters.com/wp-content/uploads/2018/12/LVDC_A110-DesignCenter-073018-jkd-21.jpg" class="" alt="" srcset="https://www.imcenters.com/wp-content/uploads/2018/12/LVDC_A110-DesignCenter-073018-jkd-21.jpg 749w, https://www.imcenters.com/wp-content/uploads/2018/12/LVDC_A110-DesignCenter-073018-jkd-21-225x300.jpg 225w" sizes="(max-width: 640px) 100vw, 640px" /></div></div>  <a class="carousel-control-prev" href="#marketshow-gallery-carousel-38723" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"><i class="fa fa-caret-left"></i></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#marketshow-gallery-carousel-38723" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"><i class="fa fa-caret-right"></i></span><span class="sr-only">Next</span></a></div>
+
+        </div>
+                        <!-- end flexible content -->
+
+
+
+              </div>
+            </div>
+          </section>
+
+              </div>
+    </article>
+  </div>
+
+    
+	</div><!-- .entry-content -->
+
+
+</article><!-- #post-## -->
+
+
+					
+				</main><!-- #main -->
+
+			</div><!-- #primary -->
+
+		</div><!-- .row end -->
+
+	</div><!-- Container end -->
+
+</div><!-- Wrapper end -->
+
+
+
+
+<!-- tpl part: footer -->
+<div class="wrapper" id="wrapper-footer">
+
+	<footer class="site-footer" id="colophon">
+
+		<div class="container-fluid">
+
+			<div class="row">
+
+				<div class="col-md-4">
+					<img class="imc-logo imc-footer-logo" src="/wp-content/themes/imcenters/img/IMCFooterLogo.png"/>
+					<div class="copyright-info">&copy; 2019 International Market Centers</div>
+				</div><!--col end -->
+				<div class="col-md-4">
+					<h2 class="nav-title">MARKETS & DESIGN RESOURCES</h2>
+					<div id="navbarFooter" class="menu-footer-menu-1-container"><ul id="footer-menu-1" class="footer-nav"><li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-362" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-362 nav-item"><a title="AmericasMart Gift &amp; Home Market" href="https://www.americasmart.com/markets/gift-home-shows" class="nav-link">AmericasMart Gift &#038; Home Market</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-859" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-859 nav-item"><a title="AmericasMart Apparel Market" href="http://https://www.americasmart.com/markets/apparel-shows" class="nav-link">AmericasMart Apparel Market</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-860" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-860 nav-item"><a title="IMC High Point Market" href="http://www.imchighpointmarket.com/" class="nav-link">IMC High Point Market</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-861" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-861 nav-item"><a title="Las Vegas Market" href="https://www.lasvegasmarket.com/" class="nav-link">Las Vegas Market</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-862" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-862 nav-item"><a title="ADAC (Atlanta Decorative Arts Center)" href="https://adacatlanta.com/" class="nav-link">ADAC (Atlanta Decorative Arts Center)</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-866" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-866 nav-item"><a title="Las Vegas Design Center" href="https://www.lasvegasmarket.com/year-round/lvdc" class="nav-link">Las Vegas Design Center</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-867" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-867 nav-item"><a title="Showtime Fabric Market" href="http://www.imchighpointmarket.com/showtime-fabric-market" class="nav-link">Showtime Fabric Market</a></li>
+</ul></div>					</div><!--col end -->
+					<div class="col-md-4">
+						<h2 class="nav-title">International Market Centers</h2>
+						<div id="navbarFooter" class="menu-footer-menu-2-container"><ul id="footer-menu-2" class="footer-nav"><li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-881" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-881 nav-item"><a title="Careers Opportunities at IMC" href="https://www.imcenters.com/careers-at-imc/" class="nav-link">Careers Opportunities at IMC</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-725" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-725 nav-item"><a title="Contact Us" href="https://www.imcenters.com/contact-us/" class="nav-link">Contact Us</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-726" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-726 nav-item"><a title="Press Releases &amp; Media Contacts" href="https://www.imcenters.com/news-and-media/" class="nav-link">Press Releases &#038; Media Contacts</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-727" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-727 nav-item"><a title="Venue Rentals" href="https://www.imcenters.com/venue-rental/" class="nav-link">Venue Rentals</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-829" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-829 nav-item"><a title="Privacy Policy" href="https://www.imcenters.com/privacy-policy/" class="nav-link">Privacy Policy</a></li>
+</ul></div>							<div class="copyright-info mobile-only">&copy; 2019 International Market Centers</div>
+
+
+						</div><!--col end -->
+
+					</div><!-- row end -->
+
+				</div><!-- container end -->
+
+			</footer><!-- #colophon -->
+		</div><!-- wrapper end -->
+		<div class="terms-conditions-area">
+			<a class="terms-link" href="">Terms & Conditions</a> | <a class="terms-link" href="">Privacy Policy</a>
+		</div>
+	</div><!-- #page we need this extra closing tag here -->
+
+	<script type='text/javascript' src='https://www.imcenters.com/wp-includes/js/admin-bar.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/www.imcenters.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.imcenters.com/wp-content/plugins/contact-form-7/includes/js/scripts.js'></script>
+<script type='text/javascript' src='https://www.imcenters.com/wp-content/themes/imcenters/js/lightbox/ekko-lightbox.min.js'></script>
+<script type='text/javascript' src='https://www.imcenters.com/wp-content/themes/imcenters/js/aos.js'></script>
+<script type='text/javascript' src='https://www.imcenters.com/wp-content/themes/imcenters/js/child-theme.min.js'></script>
+<script type='text/javascript' src='https://www.imcenters.com/wp-includes/js/wp-embed.min.js'></script>
+	<!--[if lte IE 8]>
+		<script type="text/javascript">
+			document.body.className = document.body.className.replace( /(^|\s)(no-)?customize-support(?=\s|$)/, '' ) + ' no-customize-support';
+		</script>
+	<![endif]-->
+	<!--[if gte IE 9]><!-->
+		<script type="text/javascript">
+			(function() {
+				var request, b = document.body, c = 'className', cs = 'customize-support', rcs = new RegExp('(^|\\s+)(no-)?'+cs+'(\\s+|$)');
+
+						request = true;
+		
+				b[c] = b[c].replace( rcs, ' ' );
+				// The customizer requires postMessage and CORS (if the site is cross domain)
+				b[c] += ( window.postMessage && request ? ' ' : ' no-' ) + cs;
+			}());
+		</script>
+	<!--<![endif]-->
+			<div id="wpadminbar" class="nojq nojs">
+							<a class="screen-reader-shortcut" href="#wp-toolbar" tabindex="1">Skip to toolbar</a>
+						<div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="Toolbar">
+				<ul id='wp-admin-bar-root-default' class="ab-top-menu"><li id='wp-admin-bar-wp-logo' class="menupop"><a class='ab-item' aria-haspopup="true" href='https://www.imcenters.com/wp-admin/about.php'><span class="ab-icon"></span><span class="screen-reader-text">About WordPress</span></a><div class="ab-sub-wrapper"><ul id='wp-admin-bar-wp-logo-default' class="ab-submenu"><li id='wp-admin-bar-about'><a class='ab-item' href='https://www.imcenters.com/wp-admin/about.php'>About WordPress</a></li></ul><ul id='wp-admin-bar-wp-logo-external' class="ab-sub-secondary ab-submenu"><li id='wp-admin-bar-wporg'><a class='ab-item' href='https://wordpress.org/'>WordPress.org</a></li><li id='wp-admin-bar-documentation'><a class='ab-item' href='https://codex.wordpress.org/'>Documentation</a></li><li id='wp-admin-bar-support-forums'><a class='ab-item' href='https://wordpress.org/support/'>Support Forums</a></li><li id='wp-admin-bar-feedback'><a class='ab-item' href='https://wordpress.org/support/forum/requests-and-feedback'>Feedback</a></li></ul></div></li><li id='wp-admin-bar-site-name' class="menupop"><a class='ab-item' aria-haspopup="true" href='https://www.imcenters.com/wp-admin/'>International Market Centers</a><div class="ab-sub-wrapper"><ul id='wp-admin-bar-site-name-default' class="ab-submenu"><li id='wp-admin-bar-dashboard'><a class='ab-item' href='https://www.imcenters.com/wp-admin/'>Dashboard</a></li></ul><ul id='wp-admin-bar-appearance' class="ab-submenu"><li id='wp-admin-bar-themes'><a class='ab-item' href='https://www.imcenters.com/wp-admin/themes.php'>Themes</a></li><li id='wp-admin-bar-widgets'><a class='ab-item' href='https://www.imcenters.com/wp-admin/widgets.php'>Widgets</a></li><li id='wp-admin-bar-menus'><a class='ab-item' href='https://www.imcenters.com/wp-admin/nav-menus.php'>Menus</a></li><li id='wp-admin-bar-background' class="hide-if-customize"><a class='ab-item' href='https://www.imcenters.com/wp-admin/themes.php?page=custom-background'>Background</a></li></ul></div></li><li id='wp-admin-bar-customize' class="hide-if-no-customize"><a class='ab-item' href='https://www.imcenters.com/wp-admin/customize.php?url=https%3A%2F%2Fwww.imcenters.com%2Fmarkets-and-shows%2F'>Customize</a></li><li id='wp-admin-bar-comments'><a class='ab-item' href='https://www.imcenters.com/wp-admin/edit-comments.php'><span class="ab-icon"></span><span class="ab-label awaiting-mod pending-count count-0" aria-hidden="true">0</span><span class="screen-reader-text">0 comments awaiting moderation</span></a></li><li id='wp-admin-bar-new-content' class="menupop"><a class='ab-item' aria-haspopup="true" href='https://www.imcenters.com/wp-admin/post-new.php'><span class="ab-icon"></span><span class="ab-label">New</span></a><div class="ab-sub-wrapper"><ul id='wp-admin-bar-new-content-default' class="ab-submenu"><li id='wp-admin-bar-new-post'><a class='ab-item' href='https://www.imcenters.com/wp-admin/post-new.php'>Spotlights</a></li><li id='wp-admin-bar-new-media'><a class='ab-item' href='https://www.imcenters.com/wp-admin/media-new.php'>Media</a></li><li id='wp-admin-bar-new-page'><a class='ab-item' href='https://www.imcenters.com/wp-admin/post-new.php?post_type=page'>Page</a></li><li id='wp-admin-bar-new-locations'><a class='ab-item' href='https://www.imcenters.com/wp-admin/post-new.php?post_type=locations'>New Location</a></li><li id='wp-admin-bar-new-property'><a class='ab-item' href='https://www.imcenters.com/wp-admin/post-new.php?post_type=property'>New Property</a></li><li id='wp-admin-bar-new-marketshow'><a class='ab-item' href='https://www.imcenters.com/wp-admin/post-new.php?post_type=marketshow'>New Market/Show</a></li><li id='wp-admin-bar-new-venuerentals'><a class='ab-item' href='https://www.imcenters.com/wp-admin/post-new.php?post_type=venuerentals'>New Venue Rental</a></li><li id='wp-admin-bar-new-teammembers'><a class='ab-item' href='https://www.imcenters.com/wp-admin/post-new.php?post_type=teammembers'>New Team Member</a></li><li id='wp-admin-bar-new-ownership'><a class='ab-item' href='https://www.imcenters.com/wp-admin/post-new.php?post_type=ownership'>New Ownership</a></li><li id='wp-admin-bar-new-contactinfo'><a class='ab-item' href='https://www.imcenters.com/wp-admin/post-new.php?post_type=contactinfo'>New Contact</a></li><li id='wp-admin-bar-new-corpnews'><a class='ab-item' href='https://www.imcenters.com/wp-admin/post-new.php?post_type=corpnews'>New News Article</a></li><li id='wp-admin-bar-new-user'><a class='ab-item' href='https://www.imcenters.com/wp-admin/user-new.php'>User</a></li></ul></div></li><li id='wp-admin-bar-edit'><a class='ab-item' href='https://www.imcenters.com/wp-admin/post.php?post=129&#038;action=edit'>Edit Page</a></li><li id='wp-admin-bar-wpseo-menu' class="menupop"><a class='ab-item' aria-haspopup="true" href='https://www.imcenters.com/wp-admin/admin.php?page=wpseo_dashboard'><div id="yoast-ab-icon" class="ab-item yoast-logo svg"><span class="screen-reader-text">SEO</span></div><div class="wpseo-score-icon adminbar-seo-score na"><span class="adminbar-seo-score-text screen-reader-text"></span></div></a><div class="ab-sub-wrapper"><ul id='wp-admin-bar-wpseo-menu-default' class="ab-submenu"><li id='wp-admin-bar-wpseo-configuration-wizard'><a class='ab-item' href='https://www.imcenters.com/wp-admin/admin.php?page=wpseo_configurator'>Configuration Wizard</a></li><li id='wp-admin-bar-wpseo-kwresearch' class="menupop"><div class="ab-item ab-empty-item" tabindex="0" aria-haspopup="true">Keyword Research</div><div class="ab-sub-wrapper"><ul id='wp-admin-bar-wpseo-kwresearch-default' class="ab-submenu"><li id='wp-admin-bar-wpseo-kwresearchtraining'><a class='ab-item' href='https://yoa.st/wp-admin-bar?php_version=7.2.18&#038;platform=wordpress&#038;platform_version=5.1.1&#038;software=premium&#038;software_version=9.6.1&#038;role=administrator&#038;days_active=176' target='_blank'>Keyword research training</a></li><li id='wp-admin-bar-wpseo-adwordsexternal'><a class='ab-item' href='https://yoa.st/keywordplanner' target='_blank'>Google Ads</a></li><li id='wp-admin-bar-wpseo-googleinsights'><a class='ab-item' href='https://yoa.st/google-trends' target='_blank'>Google Trends</a></li></ul></div></li><li id='wp-admin-bar-wpseo-analysis' class="menupop"><div class="ab-item ab-empty-item" tabindex="0" aria-haspopup="true">Analyze this page</div><div class="ab-sub-wrapper"><ul id='wp-admin-bar-wpseo-analysis-default' class="ab-submenu"><li id='wp-admin-bar-wpseo-inlinks'><a class='ab-item' href='https://search.google.com/search-console/links/drilldown?resource_id=https%3A%2F%2Fwww.imcenters.com&#038;type=EXTERNAL&#038;target=https%3A%2F%2Fwww.imcenters.com%2Fmarkets-and-shows%2F&#038;domain=' target='_blank'>Check links to this URL</a></li><li id='wp-admin-bar-wpseo-kwdensity'><a class='ab-item' href='http://www.zippy.co.uk/keyworddensity/index.php?url=https%3A%2F%2Fwww.imcenters.com%2Fmarkets-and-shows%2F&#038;keyword=' target='_blank'>Check Keyphrase Density</a></li><li id='wp-admin-bar-wpseo-cache'><a class='ab-item' href='//webcache.googleusercontent.com/search?strip=1&#038;q=cache:https%3A%2F%2Fwww.imcenters.com%2Fmarkets-and-shows%2F' target='_blank'>Check Google Cache</a></li><li id='wp-admin-bar-wpseo-header'><a class='ab-item' href='//quixapp.com/headers/?r=https%3A%2F%2Fwww.imcenters.com%2Fmarkets-and-shows%2F' target='_blank'>Check Headers</a></li><li id='wp-admin-bar-wpseo-structureddata'><a class='ab-item' href='https://search.google.com/structured-data/testing-tool#url=https%3A%2F%2Fwww.imcenters.com%2Fmarkets-and-shows%2F' target='_blank'>Google Structured Data Test</a></li><li id='wp-admin-bar-wpseo-facebookdebug'><a class='ab-item' href='//developers.facebook.com/tools/debug/og/object?q=https%3A%2F%2Fwww.imcenters.com%2Fmarkets-and-shows%2F' target='_blank'>Facebook Debugger</a></li><li id='wp-admin-bar-wpseo-pinterestvalidator'><a class='ab-item' href='https://developers.pinterest.com/tools/url-debugger/?link=https%3A%2F%2Fwww.imcenters.com%2Fmarkets-and-shows%2F' target='_blank'>Pinterest Rich Pins Validator</a></li><li id='wp-admin-bar-wpseo-htmlvalidation'><a class='ab-item' href='//validator.w3.org/check?uri=https%3A%2F%2Fwww.imcenters.com%2Fmarkets-and-shows%2F' target='_blank'>HTML Validator</a></li><li id='wp-admin-bar-wpseo-cssvalidation'><a class='ab-item' href='//jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fwww.imcenters.com%2Fmarkets-and-shows%2F' target='_blank'>CSS Validator</a></li><li id='wp-admin-bar-wpseo-pagespeed'><a class='ab-item' href='//developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwww.imcenters.com%2Fmarkets-and-shows%2F' target='_blank'>Google Page Speed Test</a></li><li id='wp-admin-bar-wpseo-google-mobile-friendly'><a class='ab-item' href='https://www.google.com/webmasters/tools/mobile-friendly/?url=https%3A%2F%2Fwww.imcenters.com%2Fmarkets-and-shows%2F' target='_blank'>Mobile-Friendly Test</a></li></ul></div></li><li id='wp-admin-bar-wpseo-settings' class="menupop"><div class="ab-item ab-empty-item" tabindex="0" aria-haspopup="true">SEO Settings</div><div class="ab-sub-wrapper"><ul id='wp-admin-bar-wpseo-settings-default' class="ab-submenu"><li id='wp-admin-bar-wpseo-general'><a class='ab-item' href='https://www.imcenters.com/wp-admin/admin.php?page=wpseo_dashboard'>General</a></li><li id='wp-admin-bar-wpseo-titles'><a class='ab-item' href='https://www.imcenters.com/wp-admin/admin.php?page=wpseo_titles'>Search Appearance</a></li><li id='wp-admin-bar-wpseo-search-console'><a class='ab-item' href='https://www.imcenters.com/wp-admin/admin.php?page=wpseo_search_console'>Search Console</a></li><li id='wp-admin-bar-wpseo-social'><a class='ab-item' href='https://www.imcenters.com/wp-admin/admin.php?page=wpseo_social'>Social</a></li><li id='wp-admin-bar-wpseo-tools'><a class='ab-item' href='https://www.imcenters.com/wp-admin/admin.php?page=wpseo_tools'>Tools</a></li><li id='wp-admin-bar-wpseo-licenses'><a class='ab-item' href='https://www.imcenters.com/wp-admin/admin.php?page=wpseo_licenses'>Premium</a></li><li id='wp-admin-bar-wpseo-courses'><a class='ab-item' href='https://www.imcenters.com/wp-admin/admin.php?page=wpseo_courses'>Courses</a></li></ul></div></li></ul></div></li></ul><ul id='wp-admin-bar-top-secondary' class="ab-top-secondary ab-top-menu"><li id='wp-admin-bar-search' class="admin-bar-search"><div class="ab-item ab-empty-item" tabindex="-1"><form action="https://www.imcenters.com/" method="get" id="adminbarsearch"><input class="adminbar-input" name="s" id="adminbar-search" type="text" value="" maxlength="150" /><label for="adminbar-search" class="screen-reader-text">Search</label><input type="submit" class="adminbar-button" value="Search"/></form></div></li><li id='wp-admin-bar-my-account' class="menupop with-avatar"><a class='ab-item' aria-haspopup="true" href='https://www.imcenters.com/wp-admin/profile.php'>Howdy, <span class="display-name">Tim Flaspoehler</span><img alt='' src='https://secure.gravatar.com/avatar/46e9c627ddaf549545554399f308efb3?s=26&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/46e9c627ddaf549545554399f308efb3?s=52&#038;d=mm&#038;r=g 2x' class='avatar avatar-26 photo' height='26' width='26' /></a><div class="ab-sub-wrapper"><ul id='wp-admin-bar-user-actions' class="ab-submenu"><li id='wp-admin-bar-user-info'><a class='ab-item' tabindex="-1" href='https://www.imcenters.com/wp-admin/profile.php'><img alt='' src='https://secure.gravatar.com/avatar/46e9c627ddaf549545554399f308efb3?s=64&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/46e9c627ddaf549545554399f308efb3?s=128&#038;d=mm&#038;r=g 2x' class='avatar avatar-64 photo' height='64' width='64' /><span class='display-name'>Tim Flaspoehler</span><span class='username'>timf</span></a></li><li id='wp-admin-bar-edit-profile'><a class='ab-item' href='https://www.imcenters.com/wp-admin/profile.php'>Edit My Profile</a></li><li id='wp-admin-bar-logout'><a class='ab-item' href='https://www.imcenters.com/imcorp/?action=logout&#038;_wpnonce=67e9f2dda1'>Log Out</a></li></ul></div></li></ul>			</div>
+						<a class="screen-reader-shortcut" href="https://www.imcenters.com/imcorp/?action=logout&#038;_wpnonce=67e9f2dda1">Log Out</a>
+					</div>
+
+		
+	<!-- click dimensions -->
+<script type="text/javascript" src="https://analytics.clickdimensions.com/ts.js" > </script>
+<script type="text/javascript">
+  var cdAnalytics = new clickdimensions.Analytics('analytics.clickdimensions.com');
+  cdAnalytics.setAccountKey('aUTuO01P2kiKRvRPiU32w');
+  cdAnalytics.setDomain('imcenters.com');
+  cdAnalytics.setScore(typeof(cdScore) == "undefined" ? 0 : (cdScore == 0 ? null : cdScore));
+  cdAnalytics.trackPage();
+</script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"40fd51ab0f","applicationID":"102659379","transactionName":"NQYGMEpVXhJSWxUIWQxMJQdMXV8PHFUAE10HFxdJWVpUTEBQDhZFTxMFA10=","queueTime":0,"applicationTime":633,"atts":"GUEFRgJPTRw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+
+</html>

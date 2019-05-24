@@ -1,0 +1,95 @@
+	html, body {
+		position: relative;
+		height: 100%;
+	}
+	body {
+		font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+		font-size: 12px;
+		color:#000;
+		margin: 0;
+		padding: 0;
+	}
+	.swiper-container {
+		width: 34em;
+		height: 30em;
+		font-size: 12px;
+	}
+	.swiper-slide {
+		height: auto !important;
+		cursor: pointer;
+		text-align: center;
+		font-size: 12px;
+		background: #fff;
+		/* Center slide text vertically */
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		-webkit-justify-content: center;
+		justify-content: center;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		-webkit-align-items: center;
+		align-items: center;
+		background-color: none;
+		transition: background-color 0.2s ease;
+		border-radius: 2.0em;
+	}
+	.swiper-slide:hover {
+		background-color: #eee;
+		transition: background-color 0.2s ease-in;
+	}
+	.swiper-slide-active {
+		background-color: #ddd;
+		transition: background-color 1.5s ease;
+	}
+
+	.timeline-wrapper {
+		width: auto;
+		height: 50em;
+	}
+	.timeline-wrapper > div {
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	.timeline-dates {
+		width: 15em;
+		text-align: right;
+		padding: 1em;
+		top: 0;
+	}
+	.timeline-market {
+		width: 15em;
+		text-align: left;
+		padding: 1em;
+		border-left: 1px solid #ddd;
+	}
+	.timeline-dot {
+		position: relative;
+	}
+	.timeline-dot::before {
+		position: absolute;
+		height: 1.0em;
+		width: 1.0em;
+		border-radius: 50%;
+		background-color: black;
+		content: '';
+		left: -0.5em;
+		top: 50%;
+		transform: translateY(-0.5em);
+	}
+	.timeline-amc::before {
+		background-color: #00c0f2 !important;
+	}
+	.timeline-lvm::before {
+		background-color: #458d27 !important;
+	}
+	.timeline-hp::before {
+		background-color: #e22f21 !important;
+	}
+	.calLegend {
+		padding-left: 1em;
+	}
