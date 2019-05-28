@@ -30,10 +30,10 @@
 		// ------------------------
 		var alertMarketDates = function() {
 			var id = timeline.activeIndex
-			console.log(markets[id].name,  markets[id].start.format('M'),  markets[id].start.format('YYYY'));
 			$("#calendar").MEC({
 				displayDate: new Date(markets[id].start),
 				events: events,
+				activeIndex: timeline.activeIndex,
 			});
 		}
 		// ------------------------
@@ -87,32 +87,33 @@
 						});
 
 						// add market dates to the events array 
-						markets.forEach(function(market) {
+						markets.forEach(function(market, m) {
 							var eventDay = moment(market.start);
 							while (eventDay <= market.end) {
 								events.push({
 									title: market.name,
+									id: m,
 									date: new Date(eventDay),
 									link: '#',
 									location: market.location,
 								});
 								eventDay = eventDay.add(1, 'days');
-								console.log(eventDay.format('MMMM Do YYYY'));
 							}
 						});
 						// create the calendar at todays date
 						$("#calendar").MEC({
 							events: events,
+							activeIndex: timeline.activeIndex,
 						});
 
 						// add slides to timeline
 						markets.forEach(function(market, m) {
-						var new_slide = document.createElement("div");
-						new_slide.className = "swiper-slide";
-						new_slide.id =  "timeline-" + m;
-						var second_month = (market.start.format('MM') == market.end.format('MM')) ? "" : market.end.format('MMMM ');
-						new_slide.innerHTML = '<div class="timeline-dates">' + market.start.format('MMMM Do') + " - " + second_month + market.end.format('Do, YYYY') + '</div><div class="timeline-market timeline-dot timeline-' + market.location + '">' + market.name + '</div>';
-						$("#swiper-timeline").append(new_slide);
+							var new_slide = document.createElement("div");
+							var second_month = (market.start.format('MM') == market.end.format('MM')) ? "" : market.end.format('MMMM ');
+							new_slide.className = "swiper-slide";
+							new_slide.id =  "timeline-" + m;
+							new_slide.innerHTML = '<div class="timeline-dates">' + market.start.format('MMMM Do') + " - " + second_month + market.end.format('Do, YYYY') + '</div><div class="timeline-market timeline-dot timeline-' + market.location + '">' + market.name + '</div>';
+							$("#swiper-timeline").append(new_slide);
 						});
 
 						// initiate timeline swiper
@@ -121,7 +122,6 @@
 							slidesPerView: 'auto',
 							spaceBetween: 0,
 							freeMode: true,
-							mousewheelcontrol: true,
 							slideToClickedSlide: true,
 							centeredSlides: true,
 							//pagination: {
@@ -136,10 +136,11 @@
 								alertMarketDates();
 							}
 						});
+						timeline.mousewheel.enable();
 						timeline.on('slideChange', function () {
-							console.log('slide changed');
 							alertMarketDates();
 						});
+						timeline.slideTo(0, 0, true);
 					}
 				});
 				// ---------------------------------

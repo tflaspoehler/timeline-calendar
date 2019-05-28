@@ -25,7 +25,7 @@
 	`;
 	var weekDaysFromSunday = '<div>S</div><div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div>';
 	var weekDaysFromMonday = '<div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div><div>S</div>';
-	var shortMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug", "Sep", "Oct", "Nov", "Dec"];
+	var shortMonths = ["January", "February", "March", "April", "May", "June", "July","August", "September", "October", "November", "December"];
 
     $.fn.miniEventCalendar = $.fn.MEC = function(options) {
     	var settings = $.extend({
@@ -128,7 +128,19 @@
 
 		        if(ldate.getMonth() != month){
 		        	for(var i = 1; i < bufferDays; i++){
-						tbody.append(dateTpl(true, i));
+     					dt = new Date(ldate);
+		     			var event = null;
+		     			var eventIndex = settings.events.findIndex(function(ev) {
+				     		return areSameDate(dt, new Date(ev.date));
+				     	});
+				        if(eventIndex != -1){
+				        	event = settings.events[eventIndex];
+
+				        	if(onInit && isToday)
+				        		showEvent(event);
+				        }
+						tbody.append(dateTpl(true, i, false, event));
+     					ldate.setDate(ldate.getDate() + 1);
 					}
 				}
 			}
@@ -155,8 +167,33 @@
      		
      		var prevMonth = getMonthDays(monthIdx, yearIdx);
      		var lastDays = "";
-        	for (var i = day; i > 0; i--)
+        	for (var i = day; i > 0; i--) {
      			lastDays += dateTpl(true, prevMonth[prevMonth.length - i]);
+        	}
+
+        	return lastDays;
+ 		}
+
+ 		function lastDaysOfPrevMonthWithEvents(day){
+ 			if(curMonth > 0){
+				var monthIdx = curMonth - 1;
+				var yearIdx = curYear;
+			}
+			else{
+     			if(curMonth < 11){
+     				var monthIdx = 0;
+     				var yearIdx = curYear + 1;
+     			}else{
+     				var monthIdx = 11;
+     				var yearIdx = curYear - 1;
+     			}
+     		}
+     		
+     		var prevMonth = getMonthDays(monthIdx, yearIdx);
+     		var lastDays = "";
+        	for (var i = day; i > 0; i--) {
+     			lastDays += dateTpl(true, prevMonth[prevMonth.length - i]);
+        	}
 
         	return lastDays;
  		}
@@ -171,12 +208,17 @@
 		        cls += (event.hasOwnProperty('location')) ? "timeline-" : "";
 		        cls += (event.hasOwnProperty('location')) ? event.location : "";
 		        cls += (event.hasOwnProperty('location')) ? " " : "";
+		        console.log(event.id-1, settings.activeIndex);
+			    if (event.id == settings.activeIndex) {
+			    	cls += "active-market ";
+			    }
 		    }
 			if(!blurred){
-		        var tpl ="<button type='button' class='a-date "+cls+"' data-event='"+JSON.stringify(event)+"'><span>"+date+"</span></button>";
+		        tpl ="<button type='button' class='a-date "+cls+"' data-event='"+JSON.stringify(event)+"'><span>"+date+"</span><div class='timeline-amc'></div></button>";
 			}
 			else {
-				var tpl = "<div class='a-date blurred "+cls+"'><span>"+date+"</span></div>";
+				// tpl = "<div class='a-date blurred "+cls+"'><span>"+date+"</span></div>";
+		        tpl ="<button type='button' class='a-date "+cls+" blurred' data-event='"+JSON.stringify(event)+"'><span>"+date+"</span></button>";
 			}
 
 			return tpl;

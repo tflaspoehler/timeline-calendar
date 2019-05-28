@@ -93,3 +93,6 @@
 	.calLegend {
 		padding-left: 1em;
 	}
+	.active-market {
+		background-color: #d8d8d8 !important;
+	}

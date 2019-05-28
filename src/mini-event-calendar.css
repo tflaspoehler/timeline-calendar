@@ -88,10 +88,16 @@
     position: relative;
     background-color: transparent;
     color: inherit;
-    padding: 1em;
+    padding: 0.5em 1.0em 1.5em 1.0em;
     border: 0.1em solid transparent;
     outline: none;
     font-size: 0.9em;
+}
+
+
+#calTbody .a-date:hover {
+    cursor: pointer;
+    background-color: #ebebeb;
 }
 
 #calTbody .a-date.blurred{
@@ -102,14 +108,15 @@
 #calTbody .a-date.event:before{
     content: '';
     position: absolute;
-    top: 0.2em;
+    bottom: 0.25em;
     right: 0;
     left: 0;
     margin: auto;
     background-color: #00c0f2;
-    width: 0.5em;
-    height: 0.5em;
-    border-radius: 0.25em;
+    width: 1.0em;
+    height: 1.0em;
+    border-radius: 0.5em;
+    opacity: 0.5;
 }
 
 #calTbody .a-date.current{
