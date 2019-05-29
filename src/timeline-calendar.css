@@ -81,18 +81,18 @@
 		top: 50%;
 		transform: translateY(-0.5em);
 	}
-	.timeline-amc::before {
+	.cal-event-amc, .timeline-amc::before {
 		background-color: #00c0f2 !important;
 	}
-	.timeline-lvm::before {
+	.cal-event-lvm, .timeline-lvm::before {
 		background-color: #458d27 !important;
 	}
-	.timeline-hp::before {
+	.cal-event-hp, .timeline-hp::before {
 		background-color: #e22f21 !important;
 	}
 	.calLegend {
 		padding-left: 1em;
 	}
 	.active-market {
-		background-color: #d8d8d8 !important;
+		font-weight: bold;
 	}

@@ -25,18 +25,44 @@
 		}
 		// ------------------------
 
-		// ------------------------
-		// alert dates onclick ????
-		// ------------------------
-		var alertMarketDates = function() {
+		// -------------------------------------
+		// update timeline when calendar changes
+		// -------------------------------------
+		var updateTimeline = function(e, calendar_date) {
+			console.log(calendar_date);
+			var closestMarket = markets.map(function(market) {return market;}).sort(function(a, b) {
+				var first = Math.min(Math.abs(new Date(calendar_date) - new Date(a.start)), Math.abs(new Date(calendar_date) - new Date(a.end)));
+				var second = Math.min(Math.abs(new Date(calendar_date) - new Date(b.start)), Math.abs(new Date(calendar_date) - new Date(b.end)));
+				if (first > second) {
+					return 1;
+				}
+				else if (first < second) {
+					return -1;
+				}
+				else {
+					return 0;
+				}
+			});
+			console.log(closestMarket[0].id, closestMarket[0].name, new Date(closestMarket[0].start));
+			timeline.slideTo(closestMarket[0].id, 0, true);
+			timeline.activeIndex = closestMarket[0].id;
+			updateCalendar();
+		}
+		// -------------------------------------
+
+		// ----------------------------------
+		// update calendar when slides change
+		// ----------------------------------
+		var updateCalendar = function() {
 			var id = timeline.activeIndex
 			$("#calendar").MEC({
 				displayDate: new Date(markets[id].start),
 				events: events,
 				activeIndex: timeline.activeIndex,
+				updateTimeline: updateTimeline,
 			});
 		}
-		// ------------------------
+		// ----------------------------------
 
 		// ----------------------------
 		// read in AMC markets from WEM
@@ -84,6 +110,9 @@
 						// sort markets array by date
 						markets = markets.sort(function(a, b) {
 							return new Date(a.start) - new Date(b.start);
+						}).map(function(market, m) {
+							market.id = m;
+							return market;
 						});
 
 						// add market dates to the events array 
@@ -104,6 +133,7 @@
 						$("#calendar").MEC({
 							events: events,
 							activeIndex: timeline.activeIndex,
+							updateTimeline: updateTimeline,
 						});
 
 						// add slides to timeline
@@ -130,15 +160,15 @@
 							//	longSwipesMs: 150,
 							//},
 							slideChangeEnd : function(swiperHere) {
-								alertMarketDates();
+								updateCalendar();
 							},
 							transitionEnd: function(swiperHere) {
-								alertMarketDates();
+								updateCalendar();
 							}
 						});
 						timeline.mousewheel.enable();
 						timeline.on('slideChange', function () {
-							alertMarketDates();
+							updateCalendar();
 						});
 						timeline.slideTo(0, 0, true);
 					}

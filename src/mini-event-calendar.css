@@ -119,6 +119,26 @@
     opacity: 0.5;
 }
 
+#calTbody .cal-events {
+    position: absolute;
+    left: 0;
+    bottom: 0.25em;
+    margin: auto;
+    padding: 0;
+    width: 100%;
+    height: 1.0em;
+    text-align: center;
+}
+#calTbody div[class^="cal-event-"], #calTbody div[class*=" cal-event-"]{
+    position: static;
+    margin: 0;
+    width: 1.0em;
+    height: 1.0em;
+    border-radius: 0.5em;
+    opacity: 0.5;
+    display: inline-block;
+}
+
 #calTbody .a-date.current{
     border-color: #abe0f9;
     outline: none;

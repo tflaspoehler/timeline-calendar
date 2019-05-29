@@ -36,6 +36,7 @@
         }, options );
 
 		var miniCalendar = this;
+		miniCalendar.off();
 
         miniCalendar.addClass('mini-cal').html(calenderTpl);
 
@@ -81,6 +82,15 @@
 				$(this).focus();
 				$(this).addClass('focused');
 			}
+			else{
+				if ($(this).hasClass('day-previous-month')) {
+					console.log('prev');
+				}
+				else if ($(this).hasClass('day-next-month')) {
+					console.log('next');
+				}
+			}
+			settings.updateTimeline(e, $(this).attr('data-date'));
 		});
 
 		function populateCalendar(month, year, onInit) {
@@ -200,25 +210,26 @@
 
 		function dateTpl(blurred, date, isToday, event, isSelected){
 			var tpl = "<div class='a-date blurred'><span>"+date+"</span></div>";
+			var eventDots = "";
 			var hasEvent = event && event !== null;
 	        var cls = isToday ? "current " : "";
 	        cls += hasEvent && isSelected ? "focused " : "";
-	        cls += hasEvent ? "event " : "";
+	        //cls += hasEvent ? "event " : "";
 	        if (hasEvent) {
-		        cls += (event.hasOwnProperty('location')) ? "timeline-" : "";
-		        cls += (event.hasOwnProperty('location')) ? event.location : "";
-		        cls += (event.hasOwnProperty('location')) ? " " : "";
-		        console.log(event.id-1, settings.activeIndex);
+		        // cls += (event.hasOwnProperty('location')) ? "timeline-" : "";
+		        // cls += (event.hasOwnProperty('location')) ? event.location : "";
+		        // cls += (event.hasOwnProperty('location')) ? " " : "";
 			    if (event.id == settings.activeIndex) {
 			    	cls += "active-market ";
 			    }
+			    eventDots = "<div class='cal-event-" + event.location + "'></div>"
 		    }
 			if(!blurred){
-		        tpl ="<button type='button' class='a-date "+cls+"' data-event='"+JSON.stringify(event)+"'><span>"+date+"</span><div class='timeline-amc'></div></button>";
+		        tpl ="<button type='button' class='a-date "+cls+"' data-date='" + curYear + "-" + (curMonth + 1) + "-" + date + "' data-event='"+JSON.stringify(event)+"'><span>"+date+"</span><div class='cal-events'>" + eventDots + "</div></button>";
 			}
 			else {
 				// tpl = "<div class='a-date blurred "+cls+"'><span>"+date+"</span></div>";
-		        tpl ="<button type='button' class='a-date "+cls+" blurred' data-event='"+JSON.stringify(event)+"'><span>"+date+"</span></button>";
+		        tpl ="<button type='button' class='a-date "+cls+" blurred' data-event='"+JSON.stringify(event)+"'><span>"+date+"</span><div class='cal-events'>" + eventDots + "</div></button>";
 			}
 
 			return tpl;
