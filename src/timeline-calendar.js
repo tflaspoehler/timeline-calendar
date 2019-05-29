@@ -29,7 +29,6 @@
 		// update timeline when calendar changes
 		// -------------------------------------
 		var updateTimeline = function(e, calendar_date) {
-			console.log(calendar_date);
 			var closestMarket = markets.map(function(market) {return market;}).sort(function(a, b) {
 				var first = Math.min(Math.abs(new Date(calendar_date) - new Date(a.start)), Math.abs(new Date(calendar_date) - new Date(a.end)));
 				var second = Math.min(Math.abs(new Date(calendar_date) - new Date(b.start)), Math.abs(new Date(calendar_date) - new Date(b.end)));
@@ -43,7 +42,6 @@
 					return 0;
 				}
 			});
-			console.log(closestMarket[0].id, closestMarket[0].name, new Date(closestMarket[0].start));
 			timeline.slideTo(closestMarket[0].id, 0, true);
 			timeline.activeIndex = closestMarket[0].id;
 			updateCalendar();

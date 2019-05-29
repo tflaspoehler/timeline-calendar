@@ -113,7 +113,6 @@
 
 			if(ldate.getDate() === 1)
 				tbody.append(lastDaysOfPrevMonth(weekDay));
-
 			while (ldate.getMonth() === month) {
      			dt = new Date(ldate);
 
@@ -121,6 +120,14 @@
      			var event = null;
      			var eventIndex = settings.events.findIndex(function(ev) {
 		     		return areSameDate(dt, new Date(ev.date));
+		     	});
+		     	var todaysEvents = [];
+
+		     	// add all events to this day that exist
+		     	settings.events.forEach(function(event) {
+		     		if (areSameDate(dt, event.date)) {
+		     			todaysEvents.push(event);
+		     		}
 		     	});
 
 		        if(eventIndex != -1){
@@ -130,7 +137,7 @@
 		        		showEvent(event);
 		        }
 
-     			tbody.append(dateTpl(false, ldate.getDate(), isToday, event, onInit && isToday));
+     			tbody.append(dateTpl(false, ldate, isToday, event, onInit && isToday));
 
      			ldate.setDate(ldate.getDate() + 1);
 
@@ -149,7 +156,7 @@
 				        	if(onInit && isToday)
 				        		showEvent(event);
 				        }
-						tbody.append(dateTpl(true, i, false, event));
+						tbody.append(dateTpl(true, dt, false, event));
      					ldate.setDate(ldate.getDate() + 1);
 					}
 				}
@@ -178,31 +185,7 @@
      		var prevMonth = getMonthDays(monthIdx, yearIdx);
      		var lastDays = "";
         	for (var i = day; i > 0; i--) {
-     			lastDays += dateTpl(true, prevMonth[prevMonth.length - i]);
-        	}
-
-        	return lastDays;
- 		}
-
- 		function lastDaysOfPrevMonthWithEvents(day){
- 			if(curMonth > 0){
-				var monthIdx = curMonth - 1;
-				var yearIdx = curYear;
-			}
-			else{
-     			if(curMonth < 11){
-     				var monthIdx = 0;
-     				var yearIdx = curYear + 1;
-     			}else{
-     				var monthIdx = 11;
-     				var yearIdx = curYear - 1;
-     			}
-     		}
-     		
-     		var prevMonth = getMonthDays(monthIdx, yearIdx);
-     		var lastDays = "";
-        	for (var i = day; i > 0; i--) {
-     			lastDays += dateTpl(true, prevMonth[prevMonth.length - i]);
+     			lastDays += dateTpl(true, new Date(yearIdx + '-' + (monthIdx+1) + '-' + prevMonth[prevMonth.length - i]));
         	}
 
         	return lastDays;
@@ -213,23 +196,32 @@
 			var eventDots = "";
 			var hasEvent = event && event !== null;
 	        var cls = isToday ? "current " : "";
-	        cls += hasEvent && isSelected ? "focused " : "";
+	        cls += hasEvent && isSelected ? "focused " : "";	
+	     	var todaysEvents = [];
+
+	     	// add all events to this day that exist
+	     	settings.events.forEach(function(ev) {
+	     		if (areSameDate(date, ev.date)) {
+			    	eventDots += "<div class='cal-event-" + ev.location + "'></div>";
+	     		}
+	     	});
+
 	        //cls += hasEvent ? "event " : "";
 	        if (hasEvent) {
 		        // cls += (event.hasOwnProperty('location')) ? "timeline-" : "";
 		        // cls += (event.hasOwnProperty('location')) ? event.location : "";
 		        // cls += (event.hasOwnProperty('location')) ? " " : "";
+
 			    if (event.id == settings.activeIndex) {
 			    	cls += "active-market ";
 			    }
-			    eventDots = "<div class='cal-event-" + event.location + "'></div>"
 		    }
 			if(!blurred){
-		        tpl ="<button type='button' class='a-date "+cls+"' data-date='" + curYear + "-" + (curMonth + 1) + "-" + date + "' data-event='"+JSON.stringify(event)+"'><span>"+date+"</span><div class='cal-events'>" + eventDots + "</div></button>";
+		        tpl ="<button type='button' class='a-date "+cls+"' data-date='" + curYear + "-" + (curMonth + 1) + "-" + date.getDate() + "' data-event='"+JSON.stringify(event)+"'><span>"+date.getDate()+"</span><div class='cal-events'>" + eventDots + "</div></button>";
 			}
 			else {
 				// tpl = "<div class='a-date blurred "+cls+"'><span>"+date+"</span></div>";
-		        tpl ="<button type='button' class='a-date "+cls+" blurred' data-event='"+JSON.stringify(event)+"'><span>"+date+"</span><div class='cal-events'>" + eventDots + "</div></button>";
+		        tpl ="<button type='button' class='a-date "+cls+" blurred' data-event='"+JSON.stringify(event)+"'><span>"+date.getDate()+"</span><div class='cal-events'>" + eventDots + "</div></button>";
 			}
 
 			return tpl;
