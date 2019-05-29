@@ -11,9 +11,15 @@
 		// get dates from imc HubDB
 		// ------------------------
 		var parseImcDates = function(dates) {
+			console.log(dates);
 			var month = dates.split(' ')[0];
 			var start = dates.split(' ')[1];
-			var end = dates.split(' ')[3].split(',')[0];
+			if (dates.includes('-')) {
+				var end = dates.split(' ')[3].split(',')[0];
+			}
+			else {
+				var start = end;
+			}
 			var year = dates.split(' ')[dates.split(' ').length-1];
 			if (year.includes(',')) {
 				year = year.split(',')[1].split()[0];
@@ -30,8 +36,19 @@
 		// -------------------------------------
 		var updateTimeline = function(e, calendar_date) {
 			var closestMarket = markets.map(function(market) {return market;}).sort(function(a, b) {
-				var first = Math.min(Math.abs(new Date(calendar_date) - new Date(a.start)), Math.abs(new Date(calendar_date) - new Date(a.end)));
-				var second = Math.min(Math.abs(new Date(calendar_date) - new Date(b.start)), Math.abs(new Date(calendar_date) - new Date(b.end)));
+				var aStart = new Date(a.start);
+				var bStart = new Date(b.start);
+				var cStart = new Date(calendar_date);
+				var aEnd = new Date(a.end);
+				var bEnd = new Date(b.end);
+				var first = Math.min(Math.abs(cStart - aStart), Math.abs(cStart - aEnd));
+				var second = Math.min(Math.abs(cStart - bStart), Math.abs(cStart - bEnd));
+				if (cStart >= aStart && cStart <= aEnd) {
+					first = 0;
+				}
+				if (cStart >= bStart && cStart <= bEnd) {
+					second = 0;
+				}
 				if (first > second) {
 					return 1;
 				}
@@ -70,17 +87,17 @@
 			success: function (amc_markets) {
 
 				// add AMC markets to markets array
-				amc_markets.forEach(function(market) {
-					if (market.masterShow.actualStartDate) {
-						markets.push({
-							id: market.marketID,
-							name: market.marketName,
-							start: moment(market.masterShow.actualStartDate),
-							end: moment(market.masterShow.actualEndDate),
-							location: 'amc',
-						});
-					}
-				});
+				//amc_markets.forEach(function(market) {
+				//	if (market.masterShow.actualStartDate) {
+				//		markets.push({
+				//			id: market.marketID,
+				//			name: market.marketName,
+				//			start: moment(market.masterShow.actualStartDate),
+				//			end: moment(market.masterShow.actualEndDate),
+				//			location: 'amc',
+				//		});
+				//	}
+				//});
 
 				// ---------------------------------
 				// read in HP/LV markets from HubDB
@@ -96,7 +113,7 @@
 								name: imc_markets.objects[id].values[1],
 								start: dates.start,
 								end: dates.end,
-								location: (imc_markets.objects[id].values[1].toLowerCase().includes('High Point'.toLowerCase()) || imc_markets.objects[id].values[1].toLowerCase().includes('Showtime'.toLowerCase())) ? 'hp' : 'lvm',
+								location: (imc_markets.objects[id].values[1].toLowerCase().includes('High Point'.toLowerCase()) || imc_markets.objects[id].values[1].toLowerCase().includes('Showtime'.toLowerCase())) ? 'hp' : (imc_markets.objects[id].values[1].toLowerCase().includes('Vegas'.toLowerCase())) ? 'lvm' : 'amc',
 							});
 						});
 
@@ -138,9 +155,10 @@
 						markets.forEach(function(market, m) {
 							var new_slide = document.createElement("div");
 							var second_month = (market.start.format('MM') == market.end.format('MM')) ? "" : market.end.format('MMMM ');
+							var second_date = (market.start.isSame(market.end, 'day')) ? "" : " - " + second_month + market.end.format('Do')
 							new_slide.className = "swiper-slide";
 							new_slide.id =  "timeline-" + m;
-							new_slide.innerHTML = '<div class="timeline-dates">' + market.start.format('MMMM Do') + " - " + second_month + market.end.format('Do, YYYY') + '</div><div class="timeline-market timeline-dot timeline-' + market.location + '">' + market.name + '</div>';
+							new_slide.innerHTML = '<div class="timeline-dates">' + market.start.format('MMMM Do') + second_date + market.end.format(', YYYY') + '</div><div class="timeline-market timeline-dot timeline-' + market.location + '">' + market.name + '</div>';
 							$("#swiper-timeline").append(new_slide);
 						});
 
@@ -152,6 +170,9 @@
 							freeMode: true,
 							slideToClickedSlide: true,
 							centeredSlides: true,
+							keyboard: {
+								enabled: true,
+							},
 							//pagination: {
 							//	el: '.swiper-pagination',
 							//	clickable: true,
