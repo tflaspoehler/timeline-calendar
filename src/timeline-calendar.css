@@ -36,6 +36,7 @@
 		border-radius: 2.0em;
 	}
 	.swiper-slide:hover {
+		background-color: #eee;
 		transition: background-color 0.2s ease-in;
 	}
 
@@ -50,18 +51,27 @@
 		margin: 0 auto;
 		padding: 0;
 		text-align: center;
-		font-size: 1.5em;
+		font-size: 0.75em;
 		/* height: 50em; */
 	}
-@media only scree (min-width: 1000px) {
+/* bigger font size for tablets and smartphones */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 	.timeline-wrapper {
-		font-size: 0.75em;
-	}
-	.timeline-wrapper > div {
-		display: inline-block;
+		font-size: 1.5em;
 	}
 	.swiper-slide:hover {
-		background-color: #eee;
+		background-color: transparent;
+	}
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1366px) {
+	.timeline-wrapper {
+		font-size: 1.0em !important;
+	}
+	.swiper-slide:hover {
+		background-color: transparent;
+	}
+	.swiper-container {
+		max-height: 50%;
 	}
 }
 
