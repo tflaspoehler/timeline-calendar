@@ -55,7 +55,7 @@
 	}
 @media only screen {
 	.timeline-wrapper {
-		font-size: 1.0em;
+		font-size: 0.75em;
 	}
 	.timeline-wrapper > div {
 		display: inline-block;
