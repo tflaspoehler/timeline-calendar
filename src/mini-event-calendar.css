@@ -95,10 +95,6 @@
 }
 
 
-#calTbody .a-date:hover {
-    cursor: pointer;
-    background-color: #ebebeb;
-}
 
 #calTbody .a-date.blurred{
     opacity: 0.5;
@@ -187,4 +183,11 @@
     overflow: hidden;
     -ms-text-overflow: ellipsis;
     text-overflow: ellipsis;
+}
+
+#calTitle .month-mover, #calTbody .has-market {
+    cursor: pointer;
+}
+#calTbody .has-market:hover {
+    background-color: #ebebeb;
 }

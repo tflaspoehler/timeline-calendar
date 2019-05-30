@@ -11,7 +11,6 @@
 		// get dates from imc HubDB
 		// ------------------------
 		var parseImcDates = function(dates) {
-			console.log(dates);
 			var month = dates.split(' ')[0];
 			var start = dates.split(' ')[1];
 			if (dates.includes('-')) {
