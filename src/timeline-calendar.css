@@ -4,21 +4,19 @@
 	}
 	body {
 		font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-		font-size: 12px;
 		color:#000;
 		margin: 0;
 		padding: 0;
+		text-align: center;
 	}
 	.swiper-container {
 		width: 34em;
 		height: 30em;
-		font-size: 12px;
 	}
 	.swiper-slide {
 		height: auto !important;
 		cursor: pointer;
 		text-align: center;
-		font-size: 12px;
 		background: #fff;
 		/* Center slide text vertically */
 		display: -webkit-box;
@@ -41,14 +39,19 @@
 		background-color: #eee;
 		transition: background-color 0.2s ease-in;
 	}
+
 	.swiper-slide-active {
 		background-color: #ddd;
 		transition: background-color 1.5s ease;
 	}
 
 	.timeline-wrapper {
+		max-width: 69em;
 		width: auto;
-		height: 50em;
+		margin: 0 auto;
+		padding: 0;
+		tex-align: center;
+		/* height: 50em; */
 	}
 	.timeline-wrapper > div {
 		display: inline-block;

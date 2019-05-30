@@ -7,6 +7,10 @@
     font-family: Verdana, sans-serif;
     background: #fcfcfc;
     color: #000;
+    /* height: 30em; */
+    width: 24em;
+    padding: 0;
+    margin: 2em 5em;
 }
 
 #calTitle{
