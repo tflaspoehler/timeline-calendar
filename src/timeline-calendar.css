@@ -36,7 +36,6 @@
 		border-radius: 2.0em;
 	}
 	.swiper-slide:hover {
-		background-color: #eee;
 		transition: background-color 0.2s ease-in;
 	}
 
@@ -50,9 +49,22 @@
 		width: auto;
 		margin: 0 auto;
 		padding: 0;
-		tex-align: center;
+		text-align: center;
+		font-size: 1.5em;
 		/* height: 50em; */
 	}
+@media only screen and (min-width: 1000px) {
+	.timeline-wrapper {
+		font-size: 1.0em;
+	}
+	.timeline-wrapper > div {
+		display: inline-block;
+	}
+	.swiper-slide:hover {
+		background-color: #eee;
+	}
+}
+
 	.timeline-wrapper > div {
 		display: inline-block;
 		vertical-align: top;
