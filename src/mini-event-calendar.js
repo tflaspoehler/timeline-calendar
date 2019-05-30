@@ -76,7 +76,7 @@
 
 		miniCalendar.on("click touchstart", ".a-date", function(e){
 			e.preventDefault(); 
-		    if($(this).hasClass('blurred')){
+			if($(this).hasClass('blurred')){
 				if ($(this).hasClass('day-previous-month')) {
 					console.log('prev');
 				}
@@ -84,7 +84,7 @@
 					console.log('next');
 				}
 			}
-			if ($(this).data('event')) {
+			if ($(this).hasClass('has-market')) {
 				settings.updateTimeline(e, $(this).attr('data-date'));
 			}
 		});
@@ -133,7 +133,7 @@
 		        		showEvent(event);
 		        }
 
-     			tbody.append(dateTpl(false, ldate, isToday, event, onInit && isToday));
+     			tbody.append(dateTpl(false, ldate, isToday, onInit && isToday));
 
      			ldate.setDate(ldate.getDate() + 1);
 
@@ -142,17 +142,8 @@
 		        if(ldate.getMonth() != month){
 		        	for(var i = 1; i < bufferDays; i++){
      					dt = new Date(ldate);
-		     			var event = null;
-		     			var eventIndex = settings.events.findIndex(function(ev) {
-				     		return areSameDate(dt, new Date(ev.date));
-				     	});
-				        if(eventIndex != -1){
-				        	event = settings.events[eventIndex];
-
-				        	if(onInit && isToday)
-				        		showEvent(event);
-				        }
-						tbody.append(dateTpl(true, dt, false, event));
+     					console.log(dt);
+						tbody.append(dateTpl(true, dt, false));
      					ldate.setDate(ldate.getDate() + 1);
 					}
 				}
@@ -187,33 +178,43 @@
         	return lastDays;
  		}
 
-		function dateTpl(blurred, date, isToday, event, isSelected){
+		function dateTpl(blurred, date, isToday, isSelected){
 			var tpl = "<div class='a-date blurred'><span>"+date+"</span></div>";
 			var eventDots = "";
 			var hasEvent = false;
 	        var cls = isToday ? "current " : "";
+	        var todaysEvents = []
+	        var eventData = "";
+
+	        console.log(date);
+
+	        // add blur for dates that aren't the current month
+	        cls += (blurred) ? "blurred " : "";
 
 	     	// add all events to this day that exist
 	     	settings.events.forEach(function(ev) {
 	     		if (areSameDate(date, ev.date)) {
+	     			todaysEvents += ev;
 	     			hasEvent = true;
 			    	eventDots += "<div class='cal-event-" + ev.location + "'></div>";
+			    	// if this is the active market in the timeline
 			    	if (ev.id == settings.activeIndex) {
 			    		cls += "active-market ";
 			    	}
 	     		}
 	     	});
+
+	     	// select the earliest event for today to send back to timeilne if clicked
+	     	eventData = (todaysEvents.length > 1) ? JSON.stringify(todaysEvents[0]) : "";
+
+	     	// add styling if there are markets
 			if (hasEvent) {
 				cls += "has-market ";
 			}
 
-			if(!blurred){
-		        tpl = "<button type='button' class='a-date "+cls+"' data-date='" + curYear + "-" + (curMonth + 1) + "-" + date.getDate() + "' data-event='"+JSON.stringify(event)+"'><span>"+date.getDate()+"</span><div class='cal-events'>" + eventDots + "</div></button>";
-			}
-			else {
-				// tpl = "<div class='a-date blurred "+cls+"'><span>"+date+"</span></div>";
-		        tpl = "<button type='button' class='a-date blurred "+cls+"' data-date='" + curYear + "-" + (curMonth + 1) + "-" + date.getDate() + "' data-event='"+JSON.stringify(event)+"'><span>"+date.getDate()+"</span><div class='cal-events'>" + eventDots + "</div></button>";
-			}
+			// make the day button
+	        tpl = "<button type='button' class='a-date "+cls+"' data-date='" + date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate() + "'><span>"+date.getDate()+"</span><div class='cal-events'>" + eventDots + "</div></button>";
+
 
 			return tpl;
 		}

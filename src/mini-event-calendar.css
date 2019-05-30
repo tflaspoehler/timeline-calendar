@@ -98,7 +98,6 @@
 
 #calTbody .a-date.blurred{
     opacity: 0.5;
-    pointer-events: none;
 }
 
 #calTbody .a-date.event:before{
@@ -139,16 +138,6 @@
     border-color: #abe0f9;
     outline: none;
     outline: 0;
-}
-
-#calTbody .a-date.focused,
-#calTbody .a-date:active{
-    background: #ddd;
-}
-
-#calTbody .a-date.current.event.focused{
-    background-color: #abe0f9;
-    color: #000;
 }
 
 #calTFooter{
