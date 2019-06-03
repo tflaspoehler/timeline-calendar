@@ -177,6 +177,11 @@
     opacity: 1.0;
     transition: opacity  0s linear 0.5s;
 }
+#calTbody .a-date .cal-tip div[class^="cal-event-"], #calTbody .a-date .cal-tip div[class*=" cal-event-"] {
+    font-size: 0.5em;
+    margin-right: 0.5em;
+    opacity: 0.75;
+}
 
 #calTFooter{
     display: flex;

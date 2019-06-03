@@ -187,7 +187,7 @@
 	     			todaysEvents += ev;
 	     			hasEvent = true;
 			    	eventDots += "<div class='cal-event-" + ev.location + "'></div>";
-			    	tooltip += '<p>' + ev.title + '</p>';
+			    	tooltip += '<p>' + "<div class='cal-event-" + ev.location + "'></div>" + ev.title + '</p>';
 			    	// if this is the active market in the timeline
 			    	if (ev.id == settings.activeIndex) {
 			    		cls += "active-market ";
