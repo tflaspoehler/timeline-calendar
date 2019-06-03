@@ -101,7 +101,7 @@
 
 
 #calTbody .a-date.blurred{
-    opacity: 0.5;
+    color: #ccc;
 }
 
 #calTbody .a-date.event:before{
@@ -142,6 +142,40 @@
     border-color: #abe0f9;
     outline: none;
     outline: 0;
+}
+
+#calTbody .a-date .cal-tip {
+    position: absolute;
+    top: 3.5em;
+    left: -3.5em;
+    width: 10em;
+    z-index: 100;
+    opacity: 0;
+    border-radius: 0.5em;
+    background-color: #333;
+    color: #fcfcfc;
+    padding: 0.5em;
+    font-weight: normal;
+    display: none;
+    transform: translateX(-2.5px);
+}
+
+#calTbody .a-date .cal-tip::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color:  transparent transparent #333 transparent;
+}
+
+
+#calTbody .a-date:hover .cal-tip {
+    display: block;
+    opacity: 1.0;
+    transition: opacity  0s linear 0.5s;
 }
 
 #calTFooter{

@@ -176,6 +176,7 @@
 	        var cls = isToday ? "current " : "";
 	        var todaysEvents = []
 	        var eventData = "";
+	        var tooltip = "";
 
 	        // add blur for dates that aren't the current month
 	        cls += (blurred) ? "blurred " : "";
@@ -186,12 +187,17 @@
 	     			todaysEvents += ev;
 	     			hasEvent = true;
 			    	eventDots += "<div class='cal-event-" + ev.location + "'></div>";
+			    	tooltip += '<p>' + ev.title + '</p>';
 			    	// if this is the active market in the timeline
 			    	if (ev.id == settings.activeIndex) {
 			    		cls += "active-market ";
 			    	}
 	     		}
 	     	});
+
+	     	if (tooltip != '') {
+	     		tooltip = "<div class='cal-tip'>" + tooltip + "</div>";
+	     	}
 
 	     	// select the earliest event for today to send back to timeilne if clicked
 	     	eventData = (todaysEvents.length > 1) ? JSON.stringify(todaysEvents[0]) : "";
@@ -202,7 +208,7 @@
 			}
 
 			// make the day button
-	        tpl = "<button type='button' class='a-date "+cls+"' data-date='" + date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate() + "'><span>"+date.getDate()+"</span><div class='cal-events'>" + eventDots + "</div></button>";
+	        tpl = "<button type='button' class='a-date "+cls+"' data-date='" + date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate() + "'>" + tooltip + "<span>"+date.getDate()+"</span><div class='cal-events'>" + eventDots + "</div></button>";
 
 
 			return tpl;
