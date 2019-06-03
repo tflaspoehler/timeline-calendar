@@ -76,14 +76,6 @@
 
 		miniCalendar.on("click touchstart", ".a-date", function(e){
 			e.preventDefault(); 
-			if($(this).hasClass('blurred')){
-				if ($(this).hasClass('day-previous-month')) {
-					console.log('prev');
-				}
-				else if ($(this).hasClass('day-next-month')) {
-					console.log('next');
-				}
-			}
 			if ($(this).hasClass('has-market')) {
 				settings.updateTimeline(e, $(this).attr('data-date'));
 			}
@@ -142,7 +134,6 @@
 		        if(ldate.getMonth() != month){
 		        	for(var i = 1; i < bufferDays; i++){
      					dt = new Date(ldate);
-     					console.log(dt);
 						tbody.append(dateTpl(true, dt, false));
      					ldate.setDate(ldate.getDate() + 1);
 					}
@@ -185,8 +176,6 @@
 	        var cls = isToday ? "current " : "";
 	        var todaysEvents = []
 	        var eventData = "";
-
-	        console.log(date);
 
 	        // add blur for dates that aren't the current month
 	        cls += (blurred) ? "blurred " : "";
@@ -234,15 +223,15 @@
 		function viewNextMonth(){
 			var nextMonth = curMonth < 11 ? curMonth + 1 : 0;
 			var nextYear = curMonth < 11 ? curYear : curYear + 1;
-
-			populateCalendar(nextMonth, nextYear);
+			settings.updateTimeline(null, nextYear + '-' + (nextMonth+1) + '-1', true)
+			// populateCalendar(nextMonth, nextYear);
 		}
 
 		function viewPrevMonth(){
 			var prevMonth = curMonth > 0 ? curMonth - 1 : 11;
 			var prevYear = curMonth > 0 ? curYear : curYear - 1;
-			
-			populateCalendar(prevMonth, prevYear);
+			settings.updateTimeline(null, prevYear + '-' + (prevMonth+1) + '-1', true)
+			// populateCalendar(prevMonth, prevYear);
 		}
 
 		function areSameDate(d1, d2) {

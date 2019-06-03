@@ -10,11 +10,12 @@
 		text-align: center;
 	}
 	.swiper-container {
-		width: 34em;
+		width: 35em;
 		height: 30em;
 	}
 	.swiper-slide {
 		height: auto !important;
+		width: auto !important;
 		cursor: pointer;
 		text-align: center;
 		background: #fff;
@@ -43,10 +44,11 @@
 	.swiper-slide-active {
 		background-color: #ddd;
 		transition: background-color 1.5s ease;
+		border: 1px solid #ddd;
 	}
 
 	.timeline-wrapper {
-		max-width: 69em;
+		max-width: 70em;
 		width: auto;
 		margin: 0 auto;
 		padding: 0;

@@ -33,14 +33,17 @@
 		// -------------------------------------
 		// update timeline when calendar changes
 		// -------------------------------------
-		var updateTimeline = function(e, calendar_date) {
-			var closestMarket = markets.map(function(market) {return market;}).sort(function(a, b) {
+		var updateTimeline = function(e, calendar_date, priceIsRightRules = false) {
+			/// sort markets by ones that are closest to current date
+			var closestMarket = markets.filter(function(market) {
+				return (priceIsRightRules) ? (new Date(market.start) >= new Date(calendar_date) || new Date(market.end) >= new Date(calendar_date)) : true 
+			}).sort(function(a, b) {
 				var aStart = new Date(a.start);
 				var bStart = new Date(b.start);
 				var cStart = new Date(calendar_date);
 				var aEnd = new Date(a.end);
 				var bEnd = new Date(b.end);
-				var first = Math.min(Math.abs(cStart - aStart), Math.abs(cStart - aEnd));
+				var first  = Math.min(Math.abs(cStart - aStart), Math.abs(cStart - aEnd));
 				var second = Math.min(Math.abs(cStart - bStart), Math.abs(cStart - bEnd));
 				if (cStart >= aStart && cStart <= aEnd) {
 					first = 0;
@@ -60,7 +63,12 @@
 			});
 			timeline.slideTo(closestMarket[0].id, 0, true);
 			timeline.activeIndex = closestMarket[0].id;
-			updateCalendar();
+			$("#calendar").MEC({
+				displayDate: new Date(calendar_date),
+				events: events,
+				activeIndex: closestMarket[0].id,
+				updateTimeline: updateTimeline,
+			});
 		}
 		// -------------------------------------
 
