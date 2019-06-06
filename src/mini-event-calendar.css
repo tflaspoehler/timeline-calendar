@@ -183,6 +183,12 @@
     opacity: 0.75;
 }
 
+.calToday {
+    font-size: 0.5em;
+    display: block;
+    cursor: pointer;
+}
+
 #calTFooter{
     display: flex;
     justify-content: space-between;

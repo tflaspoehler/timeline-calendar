@@ -17,6 +17,7 @@
 			<div id="calThead"></div>
 			<div id="calTbody"></div>
 		</div>
+		<div class="calLegend calToday">TODAY &rarr;</div>
 		<div id="calTFooter">
 			<div class="timeline-dot timeline-amc calLegend">Atlanta</div>
 			<div class="timeline-dot timeline-hp calLegend">High Point</div>
@@ -79,12 +80,25 @@
 			if ($(this).hasClass('has-market')) {
 				settings.updateTimeline(e, $(this).attr('data-date'));
 			}
+			if ($(this).hasClass('calToday')) {
+				var n = new Date();
+				console.log('TODAY IS THE GREATEST');
+				settings.updateTimeline(e, n.getFullYear() + '-' + n.getMonth() + '-' + n.getDate());
+			}
+		});
+
+		miniCalendar.on("click touchstart", ".calToday", function(e){
+			var n = new Date();
+			e.preventDefault(); 
+			console.log('TODAY IS THE GREATEST');
+			settings.updateTimeline(e, n.getFullYear() + '-' + (1+n.getMonth()) + '-' + n.getDate());
+
 		});
 
 		function populateCalendar(month, year, onInit) {
 			tbody.html("");
 			calTitle.text(shortMonths[month] + " " + year);
-			eventTitle.text("Click day to see event");
+			eventTitle.text("Click day to see event");	
 			eventsLink.text("All Events");
 			eventsLink.attr("href", "#");
 
